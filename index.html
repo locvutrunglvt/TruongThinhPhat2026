@@ -838,7 +838,38 @@
                 font-size: 0.78rem;
             }
         }
+    
+        /* Interactive GIS Map & Tab 4 */
+        #fscWebMap {
+            height: 520px;
+            width: 100%;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+            background: #0f172a;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        .commune-badge-label {
+            background: transparent;
+            border: none;
+        }
+        @media (max-width: 600px) {
+            #fscWebMap {
+                height: 380px;
+            }
+        }
+        @media print {
+            #fscWebMap, .top-navbar, .submit-bar, .tabs-nav {
+                display: none !important;
+            }
+        }
     </style>
+    <!-- Leaflet GIS Map Library & Map Data -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/fsc_map_data.js"></script>
 </head>
 <body>
 
@@ -855,7 +886,7 @@
     <!-- Official Header -->
     <div class="header-official">
         <div class="org-title">CÔNG TY TNHH THƯƠNG MẠI VÀ ĐẦU TƯ TRƯỜNG THỊNH PHÁT</div>
-        <div class="group-title">NHÓM CHỨNG CHỈ RỪNG FSC® VĂN HÁN - TRƯỜNG THỊNH PHÁT</div>
+        <div class="group-title">NHÓM CHỨNG CHỈ RỪNG FSC VĂN HÁN - TRƯỜNG THỊNH PHÁT</div>
         <div class="cert-code">Mã số chứng chỉ quốc tế: <strong>FSC-C183027</strong></div>
         <div class="divider-line"></div>
         <h1>PHIẾU THAM VẤN Ý KIẾN CÁC BÊN LIÊN QUAN</h1>
@@ -872,7 +903,7 @@
             </div>
             <div class="meta-table-item">
                 <strong>Quy mô quản lý:</strong>
-                <span>3.804,59 ha rừng trồng sản xuất / 1.674 hộ gia đình</span>
+                <span>4.167,14 ha rừng trồng sản xuất / 1.870 hộ gia đình</span>
             </div>
             <div class="meta-table-item">
                 <strong>Rừng liên kết bảo tồn:</strong>
@@ -893,12 +924,13 @@
                 <button type="button" class="tab-btn active" onclick="switchTab(0)">Phần 1: Tổng quan QLRBV & Rừng Nguyên Vẹn (IFL)</button>
                 <button type="button" class="tab-btn" onclick="switchTab(1)">Phần 2: Môi trường (EIA), HCVF & Rừng Mẫu 628,40 ha</button>
                 <button type="button" class="tab-btn" onclick="switchTab(2)">Phần 3: Xã hội (SIA), An toàn LĐ & Giải quyết Khiếu nại</button>
+                <button type="button" class="tab-btn" onclick="switchTab(3)">Phần 4: Bản đồ Phạm vi & Phân bố Lô rừng</button>
             </div>
 
             <!-- Tab 1 -->
             <div class="tab-pane active" id="tab0">
                 <h3>1. Quy mô diện tích & Phương án Quản lý Rừng Bền vững (2025-2031)</h3>
-                <p>&bull; <strong>Chủ thể:</strong> Công ty TNHH Thương mại & Đầu tư Trường Thịnh Phát liên kết với 1.674 hộ gia đình chủ rừng trồng sản xuất tại 04 xã thuộc tỉnh Thái Nguyên: Văn Hán (2.821,49 ha), Văn Lăng (469,10 ha), Quang Sơn (295,33 ha), Đồng Hỷ (218,67 ha) &mdash; Tổng diện tích là <strong>3.804,59 ha</strong> với 2.198 lô rừng Keo tai tượng và Keo lai.</p>
+                <p>&bull; <strong>Chủ thể:</strong> Công ty TNHH Thương mại & Đầu tư Trường Thịnh Phát liên kết với 1.870 hộ gia đình chủ rừng trồng sản xuất tại 04 xã thuộc tỉnh Thái Nguyên: Văn Hán, Văn Lăng, Quang Sơn, Đồng Hỷ &mdash; Tổng diện tích chốt tham vấn năm 2026 là <strong>4.167,14 ha</strong> (tăng 344,72 ha so với năm 2025) với <strong>2.441 lô rừng</strong> (tăng 242 lô) thuộc <strong>72 nhóm hộ</strong>.</p>
                 <p>&bull; <strong>Định hướng kinh tế & Rừng gỗ lớn:</strong> Kéo dài chu kỳ khai thác lên 6–7 năm để đạt đường kính gỗ lớn (D1.3 &ge; 16–18 cm). Mức khai thác bền vững hàng năm (AAC) đạt <strong>500 ha/năm</strong>, sản lượng gỗ bình quân <strong>60.000 – 80.000 m³/năm</strong>, luôn nhỏ hơn lượng tăng trưởng hàng năm.</p>
                 <p>&bull; <strong>Bao tiêu sản phẩm:</strong> Công ty cam kết thu mua gỗ rừng trồng có chứng chỉ FSC cao hơn giá thị trường tự do từ <strong>10% đến 15%</strong>.</p>
                 <p>&bull; <strong>Phân tích Rừng Nguyên vẹn (IFL):</strong> 100% diện tích rừng trồng của Nhóm nằm hoàn toàn bên ngoài các khối Rừng Nguyên vẹn (IFL) của Tổ chức Giám sát Rừng Toàn cầu (Global Forest Watch). Cách xa Khu Bảo tồn Hồ Núi Cốc 9 km và VQG Tam Đảo 21 km.</p>
@@ -917,9 +949,41 @@
             <div class="tab-pane" id="tab2">
                 <h3>3. Tác động Xã hội (SIA), An toàn Lao động & Cơ chế Khiếu nại</h3>
                 <p>&bull; <strong>Quyền sử dụng đất:</strong> 100% diện tích tham gia FSC có Sổ đỏ hoặc hợp đồng giao khoán rõ ràng, không tranh chấp, không xâm lấn đất công.</p>
-                <p>&bull; <strong>Lợi ích cộng đồng:</strong> Tạo việc làm cho 1.674 hộ gia đình và trên 90% lao động thời vụ địa phương. Tôn trọng bản sắc văn hóa của 08 dân tộc (Tày, Nùng, Sán Dìu, Mông, Kinh...); bảo vệ nguyên vẹn khu vực <strong>Rừng cúng, miếu thần rừng</strong> và vùng đệm di tích Mái Đá Ngườm.</p>
+                <p>&bull; <strong>Lợi ích cộng đồng:</strong> Tạo việc làm cho 1.870 hộ gia đình và trên 90% lao động thời vụ địa phương. Tôn trọng bản sắc văn hóa của 08 dân tộc (Tày, Nùng, Sán Dìu, Mông, Kinh...); bảo vệ nguyên vẹn khu vực <strong>Rừng cúng, miếu thần rừng</strong> và vùng đệm di tích Mái Đá Ngườm.</p>
                 <p>&bull; <strong>An toàn vệ sinh lao động (ATVSLĐ):</strong> Cung cấp bảo hộ lao động đầy đủ, hộp sơ cấp cứu tại hiện trường; huấn luyện an toàn cưa xăng; bình đẳng tiền lương nam-nữ; nghiêm cấm sử dụng lao động trẻ em dưới 18 tuổi.</p>
                 <p>&bull; <strong>Quy trình khiếu nại 3 cấp minh bạch:</strong> Cấp 1 (Thôn/Xã hòa giải trong 07 ngày) &rarr; Cấp 2 (Chủ thể Nhóm phối hợp UBND xã đối thoại trong 15 ngày) &rarr; Cấp 3 (Cơ quan Nhà nước có thẩm quyền). Điện thoại tiếp nhận: <strong>0988.217.997</strong>.</p>
+            </div>
+            <!-- Tab 4: Interactive GIS Map -->
+            <div class="tab-pane" id="tab3">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 10px;">
+                    <div>
+                        <h3 style="margin-bottom: 4px;">4. Bản đồ Phạm vi Chứng chỉ Rừng FSC & Phân bố Lô rừng (Địa bàn 04 Xã)</h3>
+                        <div style="font-size: 13px; color: var(--slate-600); line-height: 1.4;">
+                            Bản đồ ranh giới hành chính 04 xã mới năm 2025 (Văn Hán, Văn Lăng, Quang Sơn, Đồng Hỷ) và phân bố 2.441 lô rừng Keo tham gia FSC.
+                        </div>
+                    </div>
+                    <button type="button" onclick="if(window.fscMapFitBounds) window.fscMapFitBounds()" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; padding: 6px 12px; background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius-sm); cursor: pointer; color: var(--slate-800); font-weight: 600; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+                        <span>⛶</span> Xem toàn bộ lâm phận
+                    </button>
+                </div>
+
+                <!-- Map Canvas Container (DRM protected) -->
+                <div id="fscWebMap" oncontextmenu="return false;"></div>
+
+                <!-- Legend bar -->
+                <div style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; font-size: 12px; color: var(--slate-700); background: #f8fafc; padding: 10px 14px; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+                    <div style="display: flex; align-items: center; gap: 6px;">
+                        <span style="display: inline-block; width: 22px; height: 3px; background: #dc2626; border-top: 1px dashed #ffffff;"></span>
+                        <span><strong>Ranh giới 04 Xã mới 2025</strong></span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 6px;">
+                        <span style="display: inline-block; width: 14px; height: 14px; background: rgba(16, 185, 129, 0.7); border: 1.5px solid #047857; border-radius: 2px;"></span>
+                        <span><strong>Vị trí các Lô rừng FSC</strong> (4.167,14 ha / 2.441 lô)</span>
+                    </div>
+                    <div style="margin-left: auto; font-size: 11.5px; color: var(--slate-500); display: flex; align-items: center; gap: 4px;">
+                        <span>🔒 Chế độ: Xem trực tuyến bảo mật (Bản quyền Nhóm FSC Văn Hán - TTP)</span>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -1008,7 +1072,7 @@
                 <!-- TC 1 -->
                 <div class="question-card">
                     <div class="question-title">Tiêu chí 1: Tính pháp lý về Đất đai, Ranh giới và Quyền sử dụng đất</div>
-                    <div class="question-desc">Ranh giới 3.804,59 ha rõ ràng; 100% diện tích có Giấy chứng nhận QSDĐ hoặc hợp đồng giao khoán, không tranh chấp, không xâm lấn đất công.</div>
+                    <div class="question-desc">Ranh giới 4.167,14 ha rõ ràng; 100% diện tích có Giấy chứng nhận QSDĐ hoặc hợp đồng giao khoán, không tranh chấp, không xâm lấn đất công.</div>
                     <div class="options-group">
                         <label class="radio-label checked">
                             <input type="radio" name="q1_land" value="Hoàn toàn nhất trí / Ranh giới rõ ràng, không tranh chấp" checked>
@@ -1143,7 +1207,7 @@
             <div class="commit-container">
                 <label class="commit-label">
                     <input type="checkbox" name="agree_commitment" id="agree_commitment" required>
-                    <span>TÔI XÁC NHẬN ĐÃ ĐỌC HIỂU ĐẦY ĐỦ NỘI DUNG TÓM TẮT PHƯƠNG ÁN QUẢN LÝ RỪNG BỀN VỮNG VÀ CÁC BÁO CÁO TÁC ĐỘNG CỦA NHÓM CHỨNG CHỈ RỪNG FSC® VĂN HÁN - TRƯỜNG THỊNH PHÁT; HOÀN TOÀN NHẤT TRÍ VỚI CÁC CAM KẾT VỀ MÔI TRƯỜNG, XÃ HỘI VÀ ĐỒNG Ý GỬI PHIẾU THAM VẤN NÀY ĐẾN BAN QUẢN LÝ NHÓM.</span>
+                    <span>TÔI XÁC NHẬN ĐÃ ĐỌC HIỂU ĐẦY ĐỦ NỘI DUNG TÓM TẮT PHƯƠNG ÁN QUẢN LÝ RỪNG BỀN VỮNG VÀ CÁC BÁO CÁO TÁC ĐỘNG CỦA NHÓM CHỨNG CHỈ RỪNG FSC VĂN HÁN - TRƯỜNG THỊNH PHÁT; HOÀN TOÀN NHẤT TRÍ VỚI CÁC CAM KẾT VỀ MÔI TRƯỜNG, XÃ HỘI VÀ ĐỒNG Ý GỬI PHIẾU THAM VẤN NÀY ĐẾN BAN QUẢN LÝ NHÓM.</span>
                 </label>
             </div>
 
@@ -1167,7 +1231,7 @@
     <!-- Official Footer -->
     <div class="footer-official">
         <div class="f-company">CÔNG TY TNHH THƯƠNG MẠI VÀ ĐẦU TƯ TRƯỜNG THỊNH PHÁT</div>
-        <div style="font-weight: 700; color: var(--primary-dark); margin: 2px 0;">NHÓM CHỨNG CHỈ RỪNG FSC® VĂN HÁN - TRƯỜNG THỊNH PHÁT</div>
+        <div style="font-weight: 700; color: var(--primary-dark); margin: 2px 0;">NHÓM CHỨNG CHỈ RỪNG FSC VĂN HÁN - TRƯỜNG THỊNH PHÁT</div>
         <div>Đơn vị chủ trì: <strong>Ban quản lý Chứng chỉ rừng Văn Hán - Trường Thịnh Phát Thái Nguyên</strong> (Mã chứng chỉ: FSC-C183027)</div>
         <div>Địa chỉ: Xóm Bờ Suối, Xã Nam Hòa và Xã Văn Hán, Huyện Đồng Hỷ, Tỉnh Thái Nguyên | Điện thoại: 0988.217.997</div>
         <div class="f-links">
@@ -1192,10 +1256,110 @@
 </div>
 
 <script>
-    // Tab Switching
+    // Tab Switching & GIS Map Auto-load
     function switchTab(index) {
         document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', i === index));
         document.querySelectorAll('.tab-pane').forEach((p, i) => p.classList.toggle('active', i === index));
+        if (index === 3 && typeof initFscMap === 'function') {
+            initFscMap();
+        }
+    }
+
+    // Leaflet Interactive GIS Map Implementation
+    let fscMapInstance = null;
+    function initFscMap() {
+        if (fscMapInstance) {
+            setTimeout(() => { fscMapInstance.invalidateSize(); }, 200);
+            return;
+        }
+
+        const mapEl = document.getElementById('fscWebMap');
+        if (!mapEl) return;
+        mapEl.addEventListener('contextmenu', e => e.preventDefault());
+
+        const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            maxZoom: 18,
+            attribution: 'Esri World Imagery'
+        });
+
+        const topo = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+            maxZoom: 19,
+            attribution: '&copy; CartoDB &copy; OpenStreetMap'
+        });
+
+        fscMapInstance = L.map('fscWebMap', {
+            center: [21.72, 105.89],
+            zoom: 12,
+            layers: [satellite],
+            zoomControl: true,
+            preferCanvas: true
+        });
+
+        const baseMaps = {
+            "Ảnh Vệ tinh (Độ nét cao)": satellite,
+            "Bản đồ Địa hình / Giao thông": topo
+        };
+        L.control.layers(baseMaps, null, { position: 'topright' }).addTo(fscMapInstance);
+
+        const canvasRenderer = L.canvas({ padding: 0.5 });
+        let communeBounds = null;
+
+        if (window.FSC_COMMUNES_GEOJSON) {
+            const communeLayer = L.geoJSON(window.FSC_COMMUNES_GEOJSON, {
+                renderer: canvasRenderer,
+                style: {
+                    color: '#dc2626',
+                    weight: 2.2,
+                    dashArray: '6, 5',
+                    fillColor: '#fef2f2',
+                    fillOpacity: 0.08
+                },
+                onEachFeature: function(feature, layer) {
+                    if (feature.properties && feature.properties.center && feature.properties.name) {
+                        const labelIcon = L.divIcon({
+                            className: 'commune-badge-label',
+                            html: `<div style="background: rgba(255,255,255,0.92); border: 1.5px solid #dc2626; color: #991b1b; padding: 3px 8px; font-weight: 700; font-size: 11px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); text-transform: uppercase; pointer-events: none; white-space: nowrap;">${feature.properties.name}</div>`,
+                            iconSize: [110, 24],
+                            iconAnchor: [55, 12]
+                        });
+                        L.marker(feature.properties.center, { icon: labelIcon, interactive: false }).addTo(fscMapInstance);
+                    }
+                }
+            }).addTo(fscMapInstance);
+            communeBounds = communeLayer.getBounds();
+        }
+
+        if (window.FSC_PLOTS_GEOJSON) {
+            L.geoJSON(window.FSC_PLOTS_GEOJSON, {
+                renderer: canvasRenderer,
+                style: {
+                    color: '#047857',
+                    weight: 1.2,
+                    fillColor: '#10b981',
+                    fillOpacity: 0.65
+                },
+                onEachFeature: function(feature, layer) {
+                    layer.bindTooltip("Lô rừng thuộc Nhóm FSC Văn Hán - Trường Thịnh Phát", {
+                        sticky: true,
+                        opacity: 0.95
+                    });
+                }
+            }).addTo(fscMapInstance);
+        }
+
+        if (communeBounds && communeBounds.isValid()) {
+            fscMapInstance.fitBounds(communeBounds, { padding: [20, 20] });
+        }
+
+        window.fscMapFitBounds = function() {
+            if (fscMapInstance && communeBounds && communeBounds.isValid()) {
+                fscMapInstance.fitBounds(communeBounds, { padding: [20, 20] });
+            }
+        };
+
+        setTimeout(() => {
+            if (fscMapInstance) fscMapInstance.invalidateSize();
+        }, 250);
     }
 
     // Auto set Date
