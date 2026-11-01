@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Lộc Vũ Trung">
+    <title>Tài Liệu Tóm Tắt Tham Vấn Ý Kiến Các Bên Liên Quan — FSC Văn Hán - TTP 2025-2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #15803d;
+            --primary-dark: #166534;
+            --primary-light: #dcfce7;
+            --forest: #0f5132;
+            --navy: #1b365d;
+            --secondary: #0284c7;
+            --amber: #d97706;
+            --slate-900: #0f172a;
+            --slate-800: #1e293b;
+            --slate-700: #334155;
+            --slate-600: #475569;
+            --slate-500: #64748b;
+            --slate-100: #f1f5f9;
+            --border: #cbd5e1;
+            --card-bg: #ffffff;
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #e2e8f0;
+            color: var(--slate-800);
+            line-height: 1.5;
+            padding: 24px 16px;
+        }
+
+        .no-print-bar {
+            max-width: 850px;
+            margin: 0 auto 16px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--primary);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn:hover { background: var(--primary-dark); }
+        .btn-outline { background: white; color: var(--slate-700); border: 1px solid var(--border); }
+        .btn-outline:hover { background: var(--slate-100); }
+
+        /* A4 Page container */
+        .page-container {
+            max-width: 850px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .a4-page {
+            background: white;
+            width: 100%;
+            min-height: 1160px; /* ~A4 aspect ratio */
+            padding: 40px 48px;
+            box-shadow: var(--shadow-md);
+            border-radius: 4px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page-header {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .page-header-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .page-header-sub {
+            font-size: 0.75rem;
+            color: var(--slate-500);
+        }
+        .fsc-code-badge {
+            background: var(--primary-light);
+            color: var(--forest);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .doc-main-title {
+            text-align: center;
+            margin: 10px 0 16px 0;
+        }
+        .doc-main-title h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.25rem;
+            color: var(--navy);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            line-height: 1.35;
+        }
+        .doc-main-title p {
+            font-size: 0.82rem;
+            color: var(--slate-600);
+            font-style: italic;
+        }
+
+        .section-title {
+            background: linear-gradient(90deg, var(--forest), var(--primary));
+            color: white;
+            padding: 6px 12px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 4px;
+            margin: 14px 0 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .subsection-title {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin: 10px 0 4px 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border-left: 3px solid var(--secondary);
+            padding-left: 6px;
+        }
+
+        p, li {
+            font-size: 0.81rem;
+            color: var(--slate-700);
+            text-align: justify;
+            margin-bottom: 6px;
+        }
+        ul { margin-left: 18px; margin-bottom: 6px; }
+        li { margin-bottom: 4px; }
+        strong { color: var(--slate-900); }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 8px 0;
+            font-size: 0.78rem;
+        }
+        .info-table th, .info-table td {
+            border: 1px solid var(--border);
+            padding: 5px 8px;
+            text-align: left;
+        }
+        .info-table th {
+            background: #f1f5f9;
+            color: var(--navy);
+            font-weight: 700;
+        }
+        .highlight-box {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-left: 4px solid var(--primary);
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin: 8px 0;
+            font-size: 0.78rem;
+        }
+        .warning-box {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-left: 4px solid var(--amber);
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin: 8px 0;
+            font-size: 0.78rem;
+        }
+
+        .page-footer {
+            margin-top: auto;
+            border-top: 1px solid var(--border);
+            padding-top: 8px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.72rem;
+            color: var(--slate-500);
+        }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .no-print-bar { display: none; }
+            .page-container { gap: 0; }
+            .a4-page {
+                box-shadow: none;
+                margin: 0;
+                padding: 35px 40px;
+                page-break-after: always;
+                min-height: 100vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="no-print-bar">
+        <div>
+            <strong>Tài liệu tóm tắt tham vấn ý kiến (03 Trang A4)</strong> — FSC Văn Hán - TTP
+        </div>
+        <div style="display: flex; gap: 8px;">
+            <a href="index.html" class="btn btn-outline">⬅ Quay lại Form Tham Vấn</a>
+            <button onclick="window.print()" class="btn">🖨 In / Xuất PDF (3 Trang)</button>
+        </div>
+    </div>
+
+    <div class="page-container">
+        <!-- ==================== TRANG 1 ==================== -->
+        <div class="a4-page">
+            <div class="page-header">
+                <div>
+                    <div class="page-header-title">Hệ Thống Quản Lý Rừng Bền Vững FSC (FSC-STD-VN-01)</div>
+                    <div class="page-header-sub">Công ty TNHH Thương mại & Đầu tư Trường Thịnh Phát — Nhóm Chứng chỉ Rừng Văn Hán</div>
+                </div>
+                <div class="fsc-code-badge">MÃ NHÓM: FSC-C183027</div>
+            </div>
+
+            <div class="doc-main-title">
+                <h1>Tài Liệu Tóm Tắt Tham Vấn Ý Kiến Các Bên Liên Quan</h1>
+                <p>Tóm tắt Phương án QLRBV (2025–2031), Đánh giá Tác động Môi trường (EIA), Tác động Xã hội (SIA), HCVF & Rừng Nguyên vẹn (IFL)</p>
+            </div>
+
+            <div class="section-title">PHẦN 1. TỔNG QUAN NHÓM CHỨNG CHỈ RỪNG & PHƯƠNG ÁN QUẢN LÝ RỪNG BỀN VỮNG</div>
+
+            <div class="subsection-title">1.1. Giới thiệu chủ thể và quy mô nhóm hộ liên kết</div>
+            <p><strong>Công ty TNHH Thương mại và Đầu tư Trường Thịnh Phát</strong> (địa chỉ: xóm Bờ Suối, xã Nam Hòa, tỉnh Thái Nguyên) là doanh nghiệp chế biến, xuất khẩu gỗ. Nhằm đáp ứng yêu cầu khắt khe về nguồn gốc gỗ hợp pháp và quản lý rừng bền vững theo tiêu chuẩn quốc tế FSC, Công ty đã thành lập mô hình liên kết chuỗi giá trị với các hộ gia đình chủ rừng trồng sản xuất từ năm 2022.</p>
+            <p>Sau khi sáp nhập chính quyền 2 cấp năm 2025, quy mô Nhóm quản lý <strong>3.804,59 ha</strong> rừng trồng Keo sản xuất với <strong>2.198 lô rừng</strong> do <strong>1.674 chủ rừng</strong> (hộ gia đình) quản lý tại 04 xã thuộc tỉnh Thái Nguyên:</p>
+
+            <table class="info-table">
+                <thead>
+                    <tr>
+                        <th>Địa bàn xã</th>
+                        <th>Diện tích (ha)</th>
+                        <th>Số hộ</th>
+                        <th>Số lô rừng</th>
+                        <th>Loài cây trồng chính</th>
+                        <th>Đai đệm ven suối (ha)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Xã Văn Hán</strong></td>
+                        <td>2.821,49</td>
+                        <td>1.123</td>
+                        <td>1.482</td>
+                        <td>Keo tai tượng, Keo lai</td>
+                        <td>5,93</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Xã Văn Lăng</strong></td>
+                        <td>469,10</td>
+                        <td>206</td>
+                        <td>224</td>
+                        <td>Keo tai tượng, Keo lai</td>
+                        <td>1,04</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Xã Quang Sơn</strong></td>
+                        <td>295,33</td>
+                        <td>155</td>
+                        <td>235</td>
+                        <td>Keo tai tượng, Keo lai</td>
+                        <td>0,33</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Xã Đồng Hỷ</strong></td>
+                        <td>218,67</td>
+                        <td>190</td>
+                        <td>257</td>
+                        <td>Keo tai tượng, Keo lai</td>
+                        <td>0,26</td>
+                    </tr>
+                    <tr style="background: #f8fafc; font-weight: 700;">
+                        <td>TỔNG CỘNG</td>
+                        <td>3.804,59 ha</td>
+                        <td>1.674 hộ</td>
+                        <td>2.198 lô</td>
+                        <td>100% Rừng trồng Keo</td>
+                        <td>7,56 ha</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="subsection-title">1.2. Mục tiêu kinh tế, luân kỳ và Mức khai thác cho phép hàng năm (AAC)</div>
+            <ul>
+                <li><strong>Chuyển hóa rừng gỗ lớn:</strong> Định hướng kéo dài luân kỳ khai thác từ 6–7 năm nhằm nâng cao giá trị gỗ tròn đường kính D1.3 ≥ 16–18 cm, phục vụ chế biến đồ gỗ xuất khẩu có giá trị gia tăng cao.</li>
+                <li><strong>Mức khai thác bền vững hàng năm (AAC):</strong> Khai thác bình quân <strong>500 ha/năm</strong>, sản lượng gỗ khai thác đạt <strong>60.000 – 80.000 m³/năm</strong>, luôn đảm bảo nguyên tắc sản lượng khai thác nhỏ hơn lượng tăng trưởng sinh khối hàng năm của toàn bộ lâm phận.</li>
+                <li><strong>Giá trị gia tăng cho người dân:</strong> Công ty cam kết bao tiêu 100% sản phẩm gỗ có chứng chỉ FSC với mức giá cao hơn thị trường tự do từ <strong>10% đến 15%</strong> tại cùng thời điểm.</li>
+            </ul>
+
+            <div class="subsection-title">1.3. Phân tích Rừng Nguyên vẹn (IFL) và Vùng cảnh quan bảo vệ</div>
+            <div class="highlight-box">
+                <strong>Kết quả phân tích GIS & Global Forest Watch (GFW 2025):</strong>
+                <br>• <strong>100% diện tích rừng trồng của Nhóm nằm hoàn toàn bên ngoài</strong> ranh giới của tất cả các khối Rừng Nguyên vẹn (Intact Forest Landscapes - IFL).
+                <br>• Rừng trồng của Nhóm nằm cách xa các Khu bảo tồn lớn trong khu vực: Cách Khu Bảo tồn Hồ Núi Cốc khoảng 9 km, cách Vườn Quốc gia Tam Đảo khoảng 21 km, đảm bảo không có tác động tiêu cực lan tỏa đến tính nguyên vẹn cảnh quan.
+            </div>
+
+            <div class="page-footer">
+                <div>Nhóm Chứng chỉ Rừng Văn Hán — Trường Thịnh Phát</div>
+                <div>Trang 1 / 3 — Tổng quan QLRBV & IFL</div>
+                <div>Tháng 9/2025 - 2026</div>
+            </div>
+        </div>
+
+        <!-- ==================== TRANG 2 ==================== -->
+        <div class="a4-page">
+            <div class="page-header">
+                <div>
+                    <div class="page-header-title">Hệ Thống Quản Lý Rừng Bền Vững FSC (FSC-STD-VN-01)</div>
+                    <div class="page-header-sub">Công ty TNHH Thương mại & Đầu tư Trường Thịnh Phát — Nhóm Chứng chỉ Rừng Văn Hán</div>
+                </div>
+                <div class="fsc-code-badge">MÃ NHÓM: FSC-C183027</div>
+            </div>
+
+            <div class="section-title">PHẦN 2. ĐÁNH GIÁ TÁC ĐỘNG MÔI TRƯỜNG (EIA), BẢO TỒN ĐDSH (HCVF) & RỪNG MẪU ĐẠI DIỆN</div>
+
+            <div class="subsection-title">2.1. Tóm tắt Đánh giá tác động môi trường (EIA) và Biện pháp giảm thiểu</div>
+            <p>Báo cáo EIA 2025 đã phân tích toàn bộ chu kỳ canh tác từ khâu chuẩn bị đất, trồng rừng, chăm sóc đến khai thác và vận chuyển, đưa ra các cam kết môi trường bắt buộc áp dụng cho 1.674 hộ gia đình:</p>
+            <ul>
+                <li><strong>Xử lý thực bì không đốt tràn lan:</strong> Nghiêm cấm hoàn toàn tập quán đốt thực bì toàn diện. Áp dụng phương pháp xử lý thực bì cơ học (phát dọn, băm nhỏ và vun theo đường đồng mức) nhằm giữ ẩm, hạn chế tối đa xói mòn rửa trôi lớp đất mặt và tái tạo độ phì nhiêu tự nhiên cho đất.</li>
+                <li><strong>Bảo vệ tuyệt đối hành lang nguồn nước (HCV4):</strong> Thiết lập và duy trì đai rừng đệm tự nhiên rộng <strong>10 – 20 mét</strong> dọc hai bên bờ tất cả các khe suối, hồ chứa thủy lợi và mó nước sinh hoạt (tổng diện tích bảo vệ nguồn nước là 7,56 ha). Nghiêm cấm đưa máy móc cơ giới hoặc khai thác gỗ sát mép nước.</li>
+                <li><strong>Nghiêm cấm hóa chất độc hại:</strong> <strong>100% diện tích không sử dụng thuốc diệt cỏ (đặc biệt là Glyphosate)</strong> và các loại thuốc BVTV thuộc Danh mục cấm của FSC và Bộ NN&PTNT. Chỉ sử dụng phân bón vi sinh/hữu cơ và phòng trừ sâu bệnh bằng biện pháp sinh học, thủ công.</li>
+            </ul>
+
+            <div class="subsection-title">2.2. Kết quả Đánh giá Rừng có Giá trị Bảo tồn Cao (HCVF)</div>
+            <table class="info-table">
+                <thead>
+                    <tr>
+                        <th>Giá trị bảo tồn (HCV)</th>
+                        <th>Hiện trạng trong Rừng trồng của Hộ</th>
+                        <th>Đánh giá tại Vùng đệm & Rừng liên kết giáp ranh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>HCV 1: Đa dạng loài & ĐV quý hiếm</strong></td>
+                        <td><strong>Không hiện hữu</strong> (Rừng thuần loài Keo, 63 loài thông thường).</td>
+                        <td>Tiếp giáp núi đá vôi KBT Thần Sa; có Khỉ mốc, Khỉ vàng, Cầy, Bò sát di chuyển vùng giáp ranh.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>HCV 2, 3: Cảnh quan & Hệ sinh thái hiếm</strong></td>
+                        <td><strong>Không hiện hữu</strong> (Rừng trồng phân tán nhiều lô nhỏ).</td>
+                        <td>Hệ sinh thái núi đá vôi Karst của KBT Thần Sa - Phượng Hoàng liền kề.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>HCV 4: Dịch vụ nguồn nước xung yếu</strong></td>
+                        <td><strong>Không có rừng phòng hộ nội bộ</strong>; có mó nước ăn dân sinh.</td>
+                        <td>Lưu vực đầu nguồn suối Thần Sa, suối Nghinh Tường cung cấp nước cho cộng đồng.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>HCV 5: Nhu cầu sống còn cộng đồng</strong></td>
+                        <td><strong>Không hiện hữu</strong> (Người dân không phụ thuộc sinh kế vào rừng tự nhiên).</td>
+                        <td>Mó nước ăn tự nhiên tại chân núi đá là nguồn nước sinh hoạt thiết yếu.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>HCV 6: Văn hóa truyền thống & Di tích</strong></td>
+                        <td><strong>Không có di tích lớn trong lô</strong>; có miếu thần rừng/nghĩa trang.</td>
+                        <td>Khu vực Rừng cúng xóm bản và Vùng giáp ranh di tích Mái Đá Ngườm, Hang Phiêng Tung.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="subsection-title">2.3. Cam kết Rừng Liên kết Bảo vệ & Rừng Mẫu đại diện (Representative Sample Area)</div>
+            <div class="highlight-box">
+                <strong>Thỏa thuận phối hợp bảo vệ rừng ngày 25/03/2025:</strong>
+                <br>Mặc dù lâm phận rừng trồng không có HCV nội tại, nhưng để đáp ứng Tiêu chuẩn FSC (Nguyên tắc 6 và 9) và bảo vệ vùng cảnh quan giáp ranh, Nhóm hộ Văn Hán – Trường Thịnh Phát đã ký Biên bản phối hợp với <strong>Ban quản lý rừng đặc dụng, phòng hộ tỉnh Thái Nguyên</strong>:
+                <br>• Cam kết phối hợp tuần tra, bảo vệ <strong>628,40 ha rừng đặc dụng</strong> thuộc Khu BTTN Thần Sa – Phượng Hoàng (vùng giáp ranh xã Văn Lăng và Quang Sơn).
+                <br>• Xác định diện tích này là <strong>Rừng Mẫu đại diện (Sample Area)</strong> của Nhóm để bảo tồn nguyên vẹn sinh cảnh núi đá vôi, bảo vệ nguồn nước và các loài động vật hoang dã.
+            </div>
+
+            <div class="page-footer">
+                <div>Nhóm Chứng chỉ Rừng Văn Hán — Trường Thịnh Phát</div>
+                <div>Trang 2 / 3 — Môi trường (EIA), HCVF & Rừng Mẫu đại diện</div>
+                <div>Tháng 9/2025 - 2026</div>
+            </div>
+        </div>
+
+        <!-- ==================== TRANG 3 ==================== -->
+        <div class="a4-page">
+            <div class="page-header">
+                <div>
+                    <div class="page-header-title">Hệ Thống Quản Lý Rừng Bền Vững FSC (FSC-STD-VN-01)</div>
+                    <div class="page-header-sub">Công ty TNHH Thương mại & Đầu tư Trường Thịnh Phát — Nhóm Chứng chỉ Rừng Văn Hán</div>
+                </div>
+                <div class="fsc-code-badge">MÃ NHÓM: FSC-C183027</div>
+            </div>
+
+            <div class="section-title">PHẦN 3. ĐÁNH GIÁ TÁC ĐỘNG XÃ HỘI (SIA), QUYỀN CỘNG ĐỒNG, AN TOÀN LAO ĐỘNG & CƠ CHẾ KHIẾU NẠI</div>
+
+            <div class="subsection-title">3.1. Tóm tắt Đánh giá tác động xã hội (SIA) và Quyền của người lao động</div>
+            <ul>
+                <li><strong>Phát triển kinh tế nông thôn:</strong> Hoạt động của Nhóm mang lại nguồn thu nhập ổn định cho 1.674 hộ gia đình trồng rừng và giải quyết việc làm thời vụ cho trên <strong>90% lao động địa phương</strong> trong các khâu trồng, chăm sóc, tỉa thưa, khai thác và vận chuyển gỗ.</li>
+                <li><strong>An toàn vệ sinh lao động (ATVSLĐ):</strong> Cung cấp đầy đủ trang thiết bị bảo hộ lao động (mũ bảo hộ, găng tay, ủng bảo hộ, kính bảo vệ mắt, áo phản quang); trang bị túi thuốc/hộp sơ cấp cứu y tế tại hiện trường khai thác; tập huấn kỹ thuật vận hành máy cưa xăng an toàn định kỳ hàng năm.</li>
+                <li><strong>Bình đẳng giới & Quyền trẻ em:</strong> Thực hiện trả công lao động bình đẳng không phân biệt giới tính đối với cùng một khối lượng công việc. <strong>Tuyệt đối không sử dụng lao động trẻ em dưới 18 tuổi</strong> vào các công việc nặng nhọc, nguy hiểm, độc hại trong lâm nghiệp.</li>
+            </ul>
+
+            <div class="subsection-title">3.2. Quyền của cộng đồng địa phương và Giá trị Văn hóa - Tín ngưỡng (HCV6)</div>
+            <ul>
+                <li><strong>Tôn trọng quyền sử dụng đất truyền thống:</strong> Toàn bộ 100% diện tích tham gia FSC đều có Giấy CNQSDĐ (Sổ đỏ) hoặc hợp đồng giao khoán hợp pháp, được đo đạc ranh giới rõ ràng trên bản đồ và thực địa, không có tranh chấp hay lấn chiếm đất đai công cộng.</li>
+                <li><strong>Bảo vệ văn hóa bản địa (08 dân tộc):</strong> Tôn trọng phong tục, tập quán của đồng bào các dân tộc Tày, Nùng, Sán Dìu, Mông, Kinh... Bảo vệ tuyệt đối <strong>khu vực Rừng cúng / Rừng thiêng đầu nguồn</strong>, miếu thờ thần rừng, các cây hương bản địa và nghĩa trang dòng họ ven rừng; không xâm phạm vùng đệm di tích Mái Đá Ngườm và Hang Phiêng Tung.</li>
+            </ul>
+
+            <div class="subsection-title">3.3. Cơ chế tiếp nhận ý kiến, đối thoại và Giải quyết tranh chấp / Khiếu nại</div>
+            <p>Nhóm chứng chỉ rừng Văn Hán – Trường Thịnh Phát áp dụng Quy trình giải quyết khiếu nại minh bạch theo 03 cấp độ đảm bảo mọi ý kiến phản ánh của cộng đồng được xử lý thỏa đáng:</p>
+            <div class="warning-box">
+                <strong>Quy trình xử lý khiếu nại 3 cấp (FSC Grievance Mechanism):</strong>
+                <br>• <strong>Cấp 1 (Cấp Thôn / Xã):</strong> Tiếp nhận đơn hoặc ý kiến trực tiếp tại các buổi họp xóm, Ban quản lý Nhóm cấp Thôn phối hợp Trưởng xóm giải quyết hòa giải trong vòng <strong>07 ngày</strong> làm việc.
+                <br>• <strong>Cấp 2 (Cấp Chủ thể Nhóm):</strong> Nếu chưa thống nhất, Chủ thể Nhóm (Công ty Trường Thịnh Phát) phối hợp với UBND xã tổ chức đối thoại trực tiếp và giải quyết trong vòng <strong>15 ngày</strong> làm việc.
+                <br>• <strong>Cấp 3 (Cơ quan Nhà nước):</strong> Trường hợp phức tạp, các bên có quyền đưa ra cơ quan Nhà nước có thẩm quyền hoặc Tòa án nhân dân theo quy định của pháp luật Việt Nam.
+            </div>
+
+            <div class="subsection-title">3.4. Thông tin liên hệ và Tiếp nhận ý kiến tham vấn</div>
+            <table class="info-table">
+                <tbody>
+                    <tr>
+                        <td style="width: 30%; font-weight: 700; background: #f8fafc;">Đơn vị chủ trì:</td>
+                        <td><strong>CÔNG TY TNHH THƯƠNG MẠI VÀ ĐẦU TƯ TRƯỜNG THỊNH PHÁT</strong></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 700; background: #f8fafc;">Văn phòng Nhóm:</td>
+                        <td>Xã Văn Hán và xã Nam Hòa, tỉnh Thái Nguyên, Việt Nam</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 700; background: #f8fafc;">Đại diện nhóm:</td>
+                        <td>Ông <strong>Phạm Văn Chung</strong> — Giám đốc Công ty Trường Thịnh Phát</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 700; background: #f8fafc;">Cán bộ kỹ thuật phụ trách:</td>
+                        <td>Ông <strong>Phạm Hồng Quân</strong> (SĐT/Zalo: <strong>0988.217.997</strong>) | Email: truongthinhphatfsc@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 700; background: #f8fafc;">Hình thức đóng góp:</td>
+                        <td>Điền trực tiếp vào <strong>Phiếu tham vấn trực tuyến</strong> hoặc gửi thư/email theo địa chỉ trên.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="page-footer">
+                <div>Nhóm Chứng chỉ Rừng Văn Hán — Trường Thịnh Phát</div>
+                <div>Trang 3 / 3 — Xã hội (SIA), An toàn lao động & Khiếu nại</div>
+                <div>Tháng 9/2025 - 2026</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
