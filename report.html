@@ -435,7 +435,7 @@
         <div class="lock-icon">🔒</div>
         <div class="lock-title">XÁC THỰC QUẢN TRỊ BÁO CÁO</div>
         <div class="lock-desc">Khu vực thống kê kết quả tham vấn ý kiến FSC Văn Hán - TTP. Vui lòng nhập mật khẩu quản trị để tiếp tục.</div>
-        <input type="password" id="passInput" class="lock-input" placeholder="Mật khẩu (TTP2026)" autofocus onkeypress="if(event.key === 'Enter') checkPassword()">
+        <input type="password" id="passInput" class="lock-input" placeholder="Nhập mật khẩu quản trị..." autofocus onkeypress="if(event.key === 'Enter') checkPassword()">
         <button class="btn-unlock" onclick="checkPassword()">🔓 Mở Khóa Báo Cáo</button>
         <div class="lock-error" id="lockErrorMsg">❌ Mật khẩu không chính xác! Vui lòng thử lại.</div>
     </div>
@@ -1020,7 +1020,7 @@
         // Title Rows
         rows.push(["CÔNG TY TNHH THƯƠNG MẠI VÀ ĐẦU TƯ TRƯỜNG THỊNH PHÁT"]);
         rows.push(["BẢNG TỔNG HỢP Ý KIẾN THAM VẤN CÁC BÊN LIÊN QUAN — FSC VĂN HÁN (FSC-C183027)"]);
-        rows.push([`Ngày xuất báo cáo: ${new Date().toLocaleDateString('vi-VN')} | Tác giả: Lộc Vũ Trung | Mật khẩu xác thực: TTP2026`]);
+        rows.push([`Ngày xuất báo cáo: ${new Date().toLocaleDateString('vi-VN')} | Tác giả: Lộc Vũ Trung | Đơn vị: Nhóm CCR Văn Hán - TTP`]);
         rows.push([]); // Spacer
 
         // Column Headers
