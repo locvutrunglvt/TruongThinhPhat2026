@@ -784,9 +784,9 @@
     let allConsultations = [];
 
     function initDashboard() {
-        // Load from LocalStorage and merge with seed
+        // Only load REAL submissions from LocalStorage (Do not display mock/fake respondents)
         const stored = JSON.parse(localStorage.getItem('ttp_consultations') || '[]');
-        allConsultations = [...stored, ...INITIAL_RECORDS];
+        allConsultations = stored;
 
         renderMetrics();
         renderCharts();
@@ -914,7 +914,17 @@
         tbody.innerHTML = '';
 
         if (list.length === 0) {
-            tbody.innerHTML = '<tr><td colspan="10" style="text-align: center; padding: 20px; color: var(--slate-500);">Không tìm thấy kết quả nào phù hợp với bộ lọc.</td></tr>';
+            tbody.innerHTML = `<tr>
+                <td colspan="10" style="text-align: center; padding: 48px 20px; color: var(--slate-600); background: #f8fafc;">
+                    <div style="font-size: 2.2rem; margin-bottom: 10px;">📭</div>
+                    <div style="font-size: 1.05rem; font-weight: 700; color: var(--slate-800); margin-bottom: 6px;">
+                        Chưa có phiếu tham vấn nào được gửi
+                    </div>
+                    <div style="font-size: 0.88rem; color: var(--slate-500); max-width: 500px; margin: 0 auto;">
+                        Hệ thống đang hoạt động và sẵn sàng tiếp nhận ý kiến. Dữ liệu thực tế sẽ tự động hiển thị ngay tại đây khi các bên liên quan hoàn thành nộp phiếu.
+                    </div>
+                </td>
+            </tr>`;
             return;
         }
 
