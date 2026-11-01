@@ -432,12 +432,12 @@
 <!-- AUTHENTICATION BARRIER -->
 <div id="authLockOverlay">
     <div class="lock-box">
-        <div class="lock-icon">🔒</div>
+        <div class="lock-icon"></div>
         <div class="lock-title">XÁC THỰC QUẢN TRỊ BÁO CÁO</div>
         <div class="lock-desc">Khu vực thống kê kết quả tham vấn ý kiến FSC Văn Hán - TTP. Vui lòng nhập mật khẩu quản trị để tiếp tục.</div>
         <input type="password" id="passInput" class="lock-input" placeholder="Nhập mật khẩu quản trị..." autofocus onkeypress="if(event.key === 'Enter') checkPassword()">
-        <button class="btn-unlock" onclick="checkPassword()">🔓 Mở Khóa Báo Cáo</button>
-        <div class="lock-error" id="lockErrorMsg">❌ Mật khẩu không chính xác! Vui lòng thử lại.</div>
+        <button class="btn-unlock" onclick="checkPassword()"> Mở Khóa Báo Cáo</button>
+        <div class="lock-error" id="lockErrorMsg"> Mật khẩu không chính xác! Vui lòng thử lại.</div>
     </div>
 </div>
 
@@ -446,12 +446,12 @@
     <!-- Topbar -->
     <div class="dash-topbar">
         <div>
-            🌲 <strong>FSC-C183027</strong> | Hệ Thống Báo Cáo & Thống Kê Tham Vấn Ý Kiến FSC Văn Hán - TTP
+             <strong>FSC-C183027</strong> | Hệ Thống Báo Cáo & Thống Kê Tham Vấn Ý Kiến FSC Văn Hán - TTP
         </div>
         <div style="display: flex; align-items: center; gap: 12px;">
-            <a href="index.html">✍ Về Form Tham Vấn</a>
-            <a href="tai-lieu-tom-tat.html" target="_blank">📄 Tài liệu tóm tắt (3 Trang)</a>
-            <button class="btn-logout" onclick="logout()">🔒 Khóa màn hình</button>
+            <a href="index.html"> Về Form Tham Vấn</a>
+            <a href="tai-lieu-tom-tat.html" target="_blank"> Tài liệu tóm tắt (3 Trang)</a>
+            <button class="btn-logout" onclick="logout()"> Khóa màn hình</button>
         </div>
     </div>
 
@@ -463,10 +463,10 @@
         </div>
         <div class="dash-actions">
             <button class="btn-export-excel" onclick="exportToExcel()">
-                <span>📊</span> XUẤT BÁO CÁO EXCEL (.XLSX)
+                <span></span> XUẤT BÁO CÁO EXCEL (.XLSX)
             </button>
             <button class="btn-action" onclick="refreshData()">
-                <span>🔄</span> Cập nhật số liệu
+                <span></span> Cập nhật số liệu
             </button>
         </div>
     </div>
@@ -916,7 +916,7 @@
         if (list.length === 0) {
             tbody.innerHTML = `<tr>
                 <td colspan="10" style="text-align: center; padding: 48px 20px; color: var(--slate-600); background: #f8fafc;">
-                    <div style="font-size: 2.2rem; margin-bottom: 10px;">📭</div>
+                    <div style="font-size: 2.2rem; margin-bottom: 10px;"></div>
                     <div style="font-size: 1.05rem; font-weight: 700; color: var(--slate-800); margin-bottom: 6px;">
                         Chưa có phiếu tham vấn nào được gửi
                     </div>
@@ -933,11 +933,11 @@
 
             // Evaluate general agreement badge
             const cList = [r.q1_land, r.q2_labor, r.q3_env, r.q4_bio, r.q5_social, r.q6_mgmt];
-            let badgeHtml = '<span class="badge-status badge-agree">🟢 Đồng thuận 100%</span>';
+            let badgeHtml = '<span class="badge-status badge-agree"> Đồng thuận 100%</span>';
             if (cList.some(v => v && v.includes('Không nhất trí'))) {
-                badgeHtml = '<span class="badge-status badge-danger">🔴 Có phản đối</span>';
+                badgeHtml = '<span class="badge-status badge-danger"> Có phản đối</span>';
             } else if (cList.some(v => v && v.includes('Nhất trí có điều kiện'))) {
-                badgeHtml = '<span class="badge-status badge-warn">🟡 Có điều kiện</span>';
+                badgeHtml = '<span class="badge-status badge-warn"> Có điều kiện</span>';
             }
 
             tr.innerHTML = `

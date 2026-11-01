@@ -4,221 +4,252 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Lộc Vũ Trung">
-    <title>Phiếu Tham Vấn Ý Kiến Các Bên Liên Quan — FSC Văn Hán - Trường Thịnh Phát 2026</title>
+    <title>Phiếu Tham Vấn Ý Kiến Các Bên Liên Quan — FSC Văn Hán (FSC-C183027)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #15803d;
-            --primary-dark: #166534;
-            --primary-light: #dcfce7;
-            --forest: #0f5132;
-            --navy: #1b365d;
-            --secondary: #0284c7;
-            --amber: #d97706;
-            --amber-light: #fef3c7;
-            --danger: #dc2626;
-            --slate-900: #0f172a;
+            --primary-dark: #14532d;
+            --primary-light: #f0fdf4;
+            --primary-border: #86efac;
+            --navy: #0f172a;
             --slate-800: #1e293b;
             --slate-700: #334155;
             --slate-600: #475569;
             --slate-500: #64748b;
+            --slate-200: #e2e8f0;
             --slate-100: #f1f5f9;
             --slate-50: #f8fafc;
             --border: #cbd5e1;
             --card-bg: #ffffff;
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-            --radius-md: 8px;
-            --radius-lg: 12px;
+            --radius-sm: 4px;
+            --radius-md: 6px;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background-color: #f1f5f9;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #eef2f6;
             color: var(--slate-800);
             line-height: 1.6;
-            padding: 16px 12px;
+            padding: 20px 12px;
         }
 
         .container {
-            max-width: 1080px;
+            max-width: 1040px;
             margin: 0 auto;
             background: var(--card-bg);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-lg);
+            border-radius: var(--radius-md);
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
             overflow: hidden;
             border: 1px solid var(--border);
         }
 
-        /* Top Banner */
+        /* Top Nav */
         .top-navbar {
-            background: #0b3d26;
-            color: white;
-            padding: 12px 24px;
+            background: #0f2e1e;
+            color: #e2e8f0;
+            padding: 10px 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.85rem;
-            border-bottom: 2px solid #22c55e;
+            font-size: 0.82rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         .top-navbar a {
-            color: #bbf7d0;
+            color: #cbd5e1;
             text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
             padding: 4px 10px;
-            border-radius: 4px;
+            border-radius: var(--radius-sm);
             transition: all 0.2s;
         }
         .top-navbar a:hover {
-            background: rgba(255,255,255,0.15);
-            color: white;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
         }
 
-        /* Hero Header */
-        .header-banner {
-            background: linear-gradient(135deg, #0f5132 0%, #15803d 70%, #166534 100%);
-            color: white;
-            padding: 32px 28px;
+        /* Official Header */
+        .header-official {
+            background: #ffffff;
+            padding: 36px 36px 24px 36px;
             text-align: center;
-            position: relative;
+            border-bottom: 1px solid var(--border);
         }
-        .header-badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(4px);
-            padding: 4px 14px;
-            border-radius: 20px;
-            font-size: 0.82rem;
+        .header-official .org-title {
+            font-size: 0.92rem;
             font-weight: 700;
-            letter-spacing: 1px;
-            margin-bottom: 12px;
+            color: var(--slate-700);
+            letter-spacing: 0.5px;
             text-transform: uppercase;
         }
-        .header-banner h1 {
-            font-family: 'Merriweather', serif;
-            font-size: 1.65rem;
+        .header-official .group-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            margin-top: 4px;
+            letter-spacing: 0.5px;
+        }
+        .header-official .cert-code {
+            font-size: 0.85rem;
+            color: var(--slate-600);
+            margin-top: 2px;
+        }
+        .header-official .divider-line {
+            width: 120px;
+            height: 2px;
+            background: var(--primary);
+            margin: 16px auto;
+        }
+        .header-official h1 {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 1.55rem;
             font-weight: 700;
+            color: #0f172a;
             margin-bottom: 8px;
             line-height: 1.35;
         }
-        .header-banner p {
-            font-size: 0.95rem;
-            color: #dcfce7;
-            max-width: 820px;
-            margin: 0 auto 16px auto;
+        .header-official .doc-subtitle {
+            font-size: 0.92rem;
+            color: var(--slate-600);
+            max-width: 860px;
+            margin: 0 auto 20px auto;
+            line-height: 1.5;
         }
-        .meta-badges {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            font-size: 0.82rem;
+
+        /* Meta Table Box */
+        .meta-table-box {
+            background: var(--slate-50);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px 24px;
+            padding: 14px 20px;
+            text-align: left;
+            font-size: 0.86rem;
+            max-width: 900px;
+            margin: 0 auto;
         }
-        .meta-tag {
-            background: rgba(0,0,0,0.25);
-            padding: 6px 12px;
-            border-radius: 6px;
+        .meta-table-item {
             display: flex;
-            align-items: center;
             gap: 6px;
+        }
+        .meta-table-item strong {
+            color: var(--slate-700);
+            min-width: 155px;
+            font-weight: 600;
+        }
+        .meta-table-item span {
+            color: var(--slate-900);
         }
 
         .main-content {
-            padding: 32px 28px;
+            padding: 28px 36px 36px 36px;
         }
 
-        /* 3-Page Summary Section */
+        /* Summary Box */
         .summary-box {
             background: #ffffff;
-            border: 2px solid #bbf7d0;
-            border-radius: var(--radius-lg);
-            padding: 24px;
-            margin-bottom: 32px;
-            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--primary);
+            border-radius: var(--radius-sm);
+            padding: 20px 24px;
+            margin-bottom: 28px;
         }
         .summary-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 16px;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 12px;
-            flex-wrap: wrap;
-            gap: 12px;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--slate-200);
         }
         .summary-title {
-            font-size: 1.15rem;
+            font-size: 0.98rem;
             font-weight: 700;
-            color: var(--forest);
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
         }
-        .tabs-nav {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 16px;
-            flex-wrap: wrap;
-        }
-        .tab-btn {
-            background: #f1f5f9;
-            border: 1px solid var(--border);
-            color: var(--slate-700);
-            padding: 8px 16px;
-            border-radius: 6px;
+        .summary-link {
             font-size: 0.85rem;
             font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .summary-link:hover {
+            text-decoration: underline;
+        }
+
+        .tabs-nav {
+            display: flex;
+            gap: 4px;
+            border-bottom: 1px solid var(--slate-200);
+            margin-bottom: 16px;
+        }
+        .tab-btn {
+            background: var(--slate-100);
+            border: 1px solid var(--border);
+            border-bottom: none;
+            padding: 8px 16px;
+            font-size: 0.84rem;
+            font-weight: 600;
+            color: var(--slate-700);
             cursor: pointer;
+            border-radius: 4px 4px 0 0;
             transition: all 0.2s;
         }
         .tab-btn.active {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
+            background: #ffffff;
+            color: var(--primary-dark);
+            border-top: 2px solid var(--primary);
+            font-weight: 700;
+            margin-bottom: -1px;
+            padding-bottom: 9px;
         }
         .tab-pane {
             display: none;
-            background: var(--slate-50);
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             color: var(--slate-700);
+            line-height: 1.65;
         }
         .tab-pane.active { display: block; }
         .tab-pane h3 {
-            font-size: 1rem;
+            font-size: 0.98rem;
             color: var(--navy);
-            margin-bottom: 10px;
-            border-left: 4px solid var(--primary);
-            padding-left: 8px;
+            margin-bottom: 8px;
+            font-weight: 700;
         }
-        .tab-pane ul { margin-left: 20px; margin-bottom: 12px; }
-        .tab-pane li { margin-bottom: 6px; }
+        .tab-pane p {
+            margin-bottom: 6px;
+        }
 
-        /* Form Structure */
+        /* Form Sections */
         .form-section {
-            margin-bottom: 28px;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 24px;
+            margin-bottom: 24px;
         }
         .section-header {
-            background: #f8fafc;
-            border-left: 5px solid var(--primary);
-            padding: 10px 16px;
-            font-size: 1.05rem;
+            font-size: 1.02rem;
             font-weight: 700;
             color: var(--navy);
-            margin-bottom: 16px;
-            border-radius: 0 6px 6px 0;
+            border-bottom: 1px solid var(--slate-200);
+            padding-bottom: 10px;
+            margin-bottom: 18px;
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
+        }
+        .section-header .sub-note {
+            font-size: 0.8rem;
+            font-weight: normal;
+            color: var(--slate-500);
         }
 
         .grid-2 {
@@ -226,8 +257,8 @@
             grid-template-columns: 1fr 1fr;
             gap: 16px;
         }
-        @media (max-width: 768px) {
-            .grid-2 { grid-template-columns: 1fr; }
+        .grid-2.align-bottom {
+            align-items: flex-end;
         }
 
         .form-group {
@@ -235,213 +266,243 @@
         }
         .form-group label {
             display: block;
-            font-size: 0.85rem;
+            font-size: 0.86rem;
             font-weight: 600;
             color: var(--slate-700);
             margin-bottom: 6px;
         }
-        .form-group label span.req { color: var(--danger); }
+        .req { color: #dc2626; font-weight: bold; }
+
         .form-control {
             width: 100%;
             padding: 9px 12px;
             border: 1px solid var(--border);
-            border-radius: 6px;
+            border-radius: var(--radius-sm);
             font-size: 0.9rem;
             color: var(--slate-800);
-            background: white;
-            transition: all 0.2s;
+            background: #ffffff;
+            transition: border-color 0.2s;
+            font-family: inherit;
         }
         .form-control:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.15);
+            box-shadow: 0 0 0 2px rgba(21, 128, 61, 0.15);
         }
 
-        /* Survey Questions Cards */
-        .question-card {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: var(--radius-md);
-            padding: 18px 20px;
-            margin-bottom: 18px;
-            box-shadow: var(--shadow-sm);
+        /* Quick Agree Action Button inside Section 1 */
+        .btn-fast-agree {
+            width: 100%;
+            height: 44px;
+            background: #15803d;
+            color: #ffffff;
+            border: 1px solid #14532d;
+            border-radius: var(--radius-sm);
+            padding: 0 16px;
+            font-family: inherit;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            line-height: 1.25;
+            box-shadow: 0 2px 4px rgba(21, 128, 61, 0.25);
             transition: all 0.2s;
         }
-        .question-card:hover {
-            border-color: #94a3b8;
-            box-shadow: var(--shadow-md);
+        .btn-fast-agree:hover {
+            background: #14532d;
+            box-shadow: 0 3px 8px rgba(20, 83, 45, 0.35);
         }
-        .q-header {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-        .q-num {
-            background: var(--primary-light);
-            color: var(--forest);
-            font-weight: 800;
-            font-size: 0.85rem;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-        .q-title {
-            font-size: 0.95rem;
+        .btn-fast-agree-title {
+            font-size: 0.94rem;
             font-weight: 700;
-            color: var(--slate-900);
-            line-height: 1.4;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
         }
-        .q-desc {
-            font-size: 0.82rem;
-            color: var(--slate-600);
-            margin-bottom: 12px;
-            padding-left: 38px;
+        .btn-fast-agree-sub {
+            font-size: 0.72rem;
+            color: #dcfce7;
+            font-weight: 400;
         }
 
-        /* Radio Options */
-        .options-group {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            padding-left: 38px;
-            margin-bottom: 12px;
+        /* Question Cards */
+        .question-card {
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            margin-bottom: 16px;
+            background: var(--slate-50);
         }
-        @media (max-width: 640px) {
-            .options-group { grid-template-columns: 1fr; }
+        .question-title {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 4px;
+        }
+        .question-desc {
+            font-size: 0.84rem;
+            color: var(--slate-600);
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .options-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 10px;
         }
         .radio-label {
             display: flex;
             align-items: center;
-            gap: 8px;
-            padding: 8px 12px;
+            gap: 10px;
+            padding: 7px 12px;
             border: 1px solid var(--border);
-            border-radius: 6px;
-            font-size: 0.83rem;
-            font-weight: 500;
+            border-radius: var(--radius-sm);
+            background: #ffffff;
             cursor: pointer;
+            font-size: 0.86rem;
+            color: var(--slate-700);
             transition: all 0.15s;
-            background: #f8fafc;
         }
         .radio-label:hover {
-            background: #e2e8f0;
-        }
-        .radio-label input[type="radio"] {
-            accent-color: var(--primary);
+            border-color: var(--primary);
+            background: #f8fafc;
         }
         .radio-label.checked {
-            background: #ecfdf5;
             border-color: var(--primary);
-            color: var(--forest);
-            font-weight: 700;
+            background: var(--primary-light);
+            font-weight: 600;
+            color: var(--primary-dark);
         }
-
-        .comment-box {
-            padding-left: 38px;
-        }
-        .comment-box textarea {
-            width: 100%;
-            padding: 8px 12px;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            font-size: 0.84rem;
-            resize: vertical;
-            min-height: 54px;
+        .radio-label input[type="radio"] {
+            margin: 0;
+            accent-color: var(--primary);
+            cursor: pointer;
         }
 
         /* Commitment Box */
         .commit-container {
             background: #fefce8;
-            border: 2px solid #fef08a;
-            border-left: 6px solid var(--amber);
-            border-radius: var(--radius-md);
-            padding: 20px;
-            margin: 24px 0;
+            border: 1px solid #fef08a;
+            border-radius: var(--radius-sm);
+            padding: 16px 20px;
+            margin-bottom: 16px;
         }
-        .commit-check-label {
+        .commit-label {
             display: flex;
-            align-items: flex-start;
             gap: 12px;
+            align-items: flex-start;
             cursor: pointer;
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: #78350f;
-            line-height: 1.5;
-        }
-        .commit-check-label input[type="checkbox"] {
-            margin-top: 3px;
-            width: 20px;
-            height: 20px;
-            accent-color: var(--primary);
-            cursor: pointer;
-            flex-shrink: 0;
-        }
-
-        /* Action Buttons */
-        .submit-bar {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            margin-top: 28px;
-            flex-wrap: wrap;
-        }
-        .btn-submit {
-            background: linear-gradient(135deg, #15803d, #166534);
-            color: white;
-            border: none;
-            padding: 14px 36px;
-            border-radius: 8px;
-            font-size: 1.05rem;
-            font-weight: 700;
-            cursor: pointer;
-            box-shadow: 0 4px 6px -1px rgba(21, 128, 61, 0.3);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.2s;
-        }
-        .btn-submit:hover {
-            background: #0f5132;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 10px -1px rgba(21, 128, 61, 0.4);
-        }
-        .btn-quick {
-            background: #0284c7;
-            color: white;
-            border: none;
-            padding: 14px 24px;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: all 0.2s;
-        }
-        .btn-quick:hover { background: #0369a1; }
-
-        /* Footer */
-        .footer {
-            background: #0f172a;
-            color: #94a3b8;
-            padding: 24px;
-            text-align: center;
-            font-size: 0.8rem;
+            font-size: 0.88rem;
+            color: #713f12;
             line-height: 1.6;
         }
-        .footer a { color: #38bdf8; text-decoration: none; }
+        .commit-label input[type="checkbox"] {
+            margin-top: 4px;
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary);
+            cursor: pointer;
+        }
+        .commit-label span {
+            font-weight: 700;
+        }
+
+        /* Date line */
+        .date-display-row {
+            margin: 12px 0 20px 0;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.88rem;
+            color: var(--slate-600);
+        }
+        .date-display-row strong {
+            color: var(--slate-800);
+            background: var(--slate-100);
+            padding: 4px 10px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+        }
+
+        /* Bottom Submit Bar */
+        .submit-bar {
+            display: flex;
+            gap: 14px;
+            margin-top: 10px;
+        }
+        .btn-bottom-quick {
+            flex: 1.4;
+            background: #15803d;
+            color: #ffffff;
+            border: 1px solid #14532d;
+            padding: 14px 20px;
+            border-radius: var(--radius-sm);
+            font-size: 0.96rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            box-shadow: 0 2px 5px rgba(21, 128, 61, 0.25);
+            transition: all 0.2s;
+        }
+        .btn-bottom-quick:hover {
+            background: #14532d;
+            box-shadow: 0 4px 10px rgba(20, 83, 45, 0.35);
+        }
+        .btn-bottom-detailed {
+            flex: 1;
+            background: #ffffff;
+            color: var(--slate-700);
+            border: 1px solid var(--border);
+            padding: 14px 20px;
+            border-radius: var(--radius-sm);
+            font-size: 0.92rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-bottom-detailed:hover {
+            background: var(--slate-100);
+            color: var(--slate-900);
+            border-color: var(--slate-400);
+        }
+
+        /* Footer */
+        .footer-official {
+            background: #ffffff;
+            border-top: 1px solid var(--border);
+            padding: 24px 36px;
+            text-align: center;
+            font-size: 0.84rem;
+            color: var(--slate-600);
+            line-height: 1.6;
+        }
+        .footer-official .f-company {
+            font-weight: 700;
+            color: var(--slate-800);
+            text-transform: uppercase;
+        }
+        .footer-official .f-links {
+            margin-top: 8px;
+        }
+        .footer-official .f-links a {
+            color: var(--primary);
+            text-decoration: none;
+            margin: 0 6px;
+        }
+        .footer-official .f-links a:hover {
+            text-decoration: underline;
+        }
 
         /* Success Modal */
         .modal-overlay {
             display: none;
             position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.6);
-            backdrop-filter: blur(4px);
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(15, 23, 42, 0.6);
             z-index: 9999;
             align-items: center;
             justify-content: center;
@@ -449,42 +510,55 @@
         }
         .modal-overlay.active { display: flex; }
         .modal-card {
-            background: white;
-            max-width: 500px;
+            background: #ffffff;
+            border-radius: var(--radius-sm);
+            max-width: 520px;
             width: 100%;
-            border-radius: var(--radius-lg);
-            padding: 32px 24px;
+            padding: 28px;
+            border: 1px solid var(--border);
             text-align: center;
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.2);
-            animation: popIn 0.3s ease;
-        }
-        @keyframes popIn {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-        .modal-icon {
-            font-size: 3.5rem;
-            color: var(--primary);
-            margin-bottom: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
         .modal-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--navy);
-            margin-bottom: 8px;
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+            text-transform: uppercase;
         }
         .modal-body {
-            font-size: 0.9rem;
-            color: var(--slate-600);
-            margin-bottom: 24px;
+            font-size: 0.92rem;
+            color: var(--slate-700);
+            line-height: 1.6;
+            margin-bottom: 20px;
         }
         .modal-actions {
             display: flex;
-            gap: 12px;
+            gap: 10px;
             justify-content: center;
         }
-    
-        /* DRM SECURITY: ANTI-SELECTION & ANTI-COPY ON SUMMARY CONTENT */
+        .btn-modal {
+            padding: 9px 18px;
+            border-radius: var(--radius-sm);
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            border: none;
+        }
+        .btn-modal-primary {
+            background: var(--primary);
+            color: #ffffff;
+        }
+        .btn-modal-primary:hover { background: var(--primary-dark); }
+        .btn-modal-outline {
+            background: #ffffff;
+            color: var(--slate-700);
+            border: 1px solid var(--border);
+        }
+        .btn-modal-outline:hover { background: var(--slate-100); }
+
+        /* Silent Content Protection: Anti-selection & Anti-print */
         .summary-box, .summary-box * {
             -webkit-user-select: none !important;
             -moz-user-select: none !important;
@@ -492,102 +566,116 @@
             user-select: none !important;
             -webkit-touch-callout: none !important;
         }
-        .summary-box {
-            position: relative;
-            overflow: hidden;
-        }
-        
         @media print {
-            .summary-box {
+            .summary-box, .container, body {
                 display: none !important;
             }
         }
 
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            .grid-2.align-bottom { align-items: stretch; }
+            .meta-table-box { grid-template-columns: 1fr; }
+            .header-official { padding: 24px 16px; }
+            .header-official h1 { font-size: 1.25rem; }
+            .main-content { padding: 20px 16px; }
+            .submit-bar { flex-direction: column; }
+            .btn-fast-agree { height: auto; padding: 12px 14px; }
+            .tabs-nav { flex-wrap: wrap; }
+            .tab-btn { border-radius: var(--radius-sm); margin-bottom: 4px; }
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- Top Nav -->
+    <!-- Top Navigation -->
     <div class="top-navbar">
+        <div>Hệ thống tham vấn ý kiến cộng đồng theo tiêu chuẩn Quản lý rừng bền vững FSC</div>
         <div>
-            🌲 <strong>FSC-C183027</strong> | Nhóm Chứng chỉ Rừng Văn Hán — Trường Thịnh Phát
-        </div>
-        <div>
-            <a href="tai-lieu-tom-tat.html" target="_blank">📄 Toàn văn Tóm tắt 3 trang (Xem trực tuyến)</a>
-            <a href="report.html" style="background: rgba(255,255,255,0.2);">📊 Quản Trị Báo Cáo</a>
+            <a href="tai-lieu-tom-tat.html" target="_blank">Xem toàn văn tóm tắt (03 trang)</a>
+            <a href="report.html">Khu vực quản trị</a>
         </div>
     </div>
 
-    <!-- Header Banner -->
-    <div class="header-banner">
-        <div class="header-badge">QUY TRÌNH THAM VẤN CỘNG ĐỒNG & CÁC BÊN LIÊN QUAN 2026</div>
+    <!-- Official Header -->
+    <div class="header-official">
+        <div class="org-title">CÔNG TY TNHH THƯƠNG MẠI VÀ ĐẦU TƯ TRƯỜNG THỊNH PHÁT</div>
+        <div class="group-title">BAN QUẢN LÝ NHÓM CHỨNG CHỈ RỪNG VĂN HÁN</div>
+        <div class="cert-code">Mã số chứng chỉ quốc tế: <strong>FSC-C183027</strong></div>
+        <div class="divider-line"></div>
         <h1>PHIẾU THAM VẤN Ý KIẾN CÁC BÊN LIÊN QUAN</h1>
-        <p>Về Phương án Quản lý rừng bền vững (2025–2031), Đánh giá Tác động Môi trường (EIA), Tác động Xã hội (SIA), Rừng có Giá trị Bảo tồn Cao (HCVF) & Rừng Nguyên vẹn (IFL)</p>
-        <div class="meta-badges">
-            <div class="meta-tag">🏢 Công ty TNHH TM&ĐT Trường Thịnh Phát</div>
-            <div class="meta-tag">📍 Địa bàn: 04 xã (Văn Hán, Văn Lăng, Quang Sơn, Đồng Hỷ)</div>
-            <div class="meta-tag">🌲 Diện tích rừng trồng: 3.804,59 ha / 1.674 hộ</div>
-            <div class="meta-tag">🛡️ Rừng liên kết bảo vệ: 628,40 ha (KBT Thần Sa)</div>
+        <div class="doc-subtitle">Về Phương án Quản lý rừng bền vững giai đoạn 2025–2031, Đánh giá Tác động Môi trường (EIA), Tác động Xã hội (SIA), Rừng có Giá trị Bảo tồn Cao (HCVF) và Rừng Nguyên vẹn (IFL)</div>
+
+        <div class="meta-table-box">
+            <div class="meta-table-item">
+                <strong>Đơn vị chủ trì:</strong>
+                <span>Công ty TNHH TM&ĐT Trường Thịnh Phát</span>
+            </div>
+            <div class="meta-table-item">
+                <strong>Địa bàn thực hiện:</strong>
+                <span>Các xã Văn Hán, Văn Lăng, Quang Sơn, Đồng Hỷ</span>
+            </div>
+            <div class="meta-table-item">
+                <strong>Quy mô quản lý:</strong>
+                <span>3.804,59 ha rừng trồng sản xuất / 1.674 hộ gia đình</span>
+            </div>
+            <div class="meta-table-item">
+                <strong>Rừng liên kết bảo tồn:</strong>
+                <span>628,40 ha rừng đặc dụng KBT Thần Sa - Phượng Hoàng</span>
+            </div>
         </div>
     </div>
 
     <div class="main-content">
-        <!-- 3-PAGE SUMMARY BOX -->
+        <!-- Summary Box -->
         <div class="summary-box">
-            
             <div class="summary-header">
-                <div class="summary-title">
-                    📖 BẢN TÓM TẮT THÔNG TIN THAM VẤN (03 TRANG TÀI LIỆU CỐT LÕI)
-                </div>
-                <div>
-                    <a href="tai-lieu-tom-tat.html" target="_blank" style="font-size: 0.85rem; font-weight: 700; color: var(--primary); text-decoration: none;">
-                        🔍 Mở xem toàn văn tài liệu ↗
-                    </a>
-                </div>
+                <div class="summary-title">NỘI DUNG TÓM TẮT TÀI LIỆU PHỤC VỤ THAM VẤN (03 PHẦN CỐT LÕI)</div>
+                <a href="tai-lieu-tom-tat.html" target="_blank" class="summary-link">Xem bản toàn văn tóm tắt 3 trang &rarr;</a>
             </div>
 
             <div class="tabs-nav">
-                <button type="button" class="tab-btn active" onclick="switchTab(0)">Trang 1: Tổng quan QLRBV & Rừng Nguyên Vẹn (IFL)</button>
-                <button type="button" class="tab-btn" onclick="switchTab(1)">Trang 2: Môi trường (EIA), HCVF & Rừng Mẫu 628,40 ha</button>
-                <button type="button" class="tab-btn" onclick="switchTab(2)">Trang 3: Xã hội (SIA), An toàn LĐ & Giải quyết Khiếu nại</button>
+                <button type="button" class="tab-btn active" onclick="switchTab(0)">Phần 1: Tổng quan QLRBV & Rừng Nguyên Vẹn (IFL)</button>
+                <button type="button" class="tab-btn" onclick="switchTab(1)">Phần 2: Môi trường (EIA), HCVF & Rừng Mẫu 628,40 ha</button>
+                <button type="button" class="tab-btn" onclick="switchTab(2)">Phần 3: Xã hội (SIA), An toàn LĐ & Giải quyết Khiếu nại</button>
             </div>
 
             <!-- Tab 1 -->
             <div class="tab-pane active" id="tab0">
                 <h3>1. Quy mô diện tích & Phương án Quản lý Rừng Bền vững (2025-2031)</h3>
-                <p>• <strong>Chủ thể:</strong> Công ty TNHH Thương mại & Đầu tư Trường Thịnh Phát liên kết với 1.674 hộ gia đình chủ rừng trồng sản xuất tại 04 xã thuộc tỉnh Thái Nguyên: Văn Hán (2.821,49 ha), Văn Lăng (469,10 ha), Quang Sơn (295,33 ha), Đồng Hỷ (218,67 ha) — Tổng diện tích là <strong>3.804,59 ha</strong> với 2.198 lô rừng Keo tai tượng và Keo lai.</p>
-                <p>• <strong>Định hướng kinh tế & Rừng gỗ lớn:</strong> Kéo dài chu kỳ khai thác lên 6–7 năm để đạt đường kính gỗ lớn (D1.3 ≥ 16–18 cm). Mức khai thác bền vững hàng năm (AAC) đạt <strong>500 ha/năm</strong>, sản lượng gỗ bình quân <strong>60.000 – 80.000 m³/năm</strong>, luôn nhỏ hơn lượng tăng trưởng hàng năm.</p>
-                <p>• <strong>Bao tiêu sản phẩm:</strong> Công ty cam kết thu mua gỗ rừng trồng có chứng chỉ FSC cao hơn giá thị trường tự do từ <strong>10% đến 15%</strong>.</p>
-                <p>• <strong>Phân tích Rừng Nguyên vẹn (IFL):</strong> 100% diện tích rừng trồng của Nhóm nằm hoàn toàn bên ngoài các khối Rừng Nguyên vẹn (IFL) của Tổ chức Giám sát Rừng Toàn cầu (Global Forest Watch). Cách xa Khu Bảo tồn Hồ Núi Cốc 9 km và VQG Tam Đảo 21 km.</p>
+                <p>&bull; <strong>Chủ thể:</strong> Công ty TNHH Thương mại & Đầu tư Trường Thịnh Phát liên kết với 1.674 hộ gia đình chủ rừng trồng sản xuất tại 04 xã thuộc tỉnh Thái Nguyên: Văn Hán (2.821,49 ha), Văn Lăng (469,10 ha), Quang Sơn (295,33 ha), Đồng Hỷ (218,67 ha) &mdash; Tổng diện tích là <strong>3.804,59 ha</strong> với 2.198 lô rừng Keo tai tượng và Keo lai.</p>
+                <p>&bull; <strong>Định hướng kinh tế & Rừng gỗ lớn:</strong> Kéo dài chu kỳ khai thác lên 6–7 năm để đạt đường kính gỗ lớn (D1.3 &ge; 16–18 cm). Mức khai thác bền vững hàng năm (AAC) đạt <strong>500 ha/năm</strong>, sản lượng gỗ bình quân <strong>60.000 – 80.000 m³/năm</strong>, luôn nhỏ hơn lượng tăng trưởng hàng năm.</p>
+                <p>&bull; <strong>Bao tiêu sản phẩm:</strong> Công ty cam kết thu mua gỗ rừng trồng có chứng chỉ FSC cao hơn giá thị trường tự do từ <strong>10% đến 15%</strong>.</p>
+                <p>&bull; <strong>Phân tích Rừng Nguyên vẹn (IFL):</strong> 100% diện tích rừng trồng của Nhóm nằm hoàn toàn bên ngoài các khối Rừng Nguyên vẹn (IFL) của Tổ chức Giám sát Rừng Toàn cầu (Global Forest Watch). Cách xa Khu Bảo tồn Hồ Núi Cốc 9 km và VQG Tam Đảo 21 km.</p>
             </div>
 
             <!-- Tab 2 -->
             <div class="tab-pane" id="tab1">
                 <h3>2. Đánh giá Tác động Môi trường (EIA), HCVF & Rừng Mẫu Đại diện</h3>
-                <p>• <strong>Xử lý thực bì:</strong> Tuyệt đối nghiêm cấm đốt thực bì toàn diện. Áp dụng kỹ thuật băm vun dọn theo đường đồng mức để giữ ẩm, chống xói mòn và trả lại chất hữu cơ cho đất.</p>
-                <p>• <strong>Bảo vệ nguồn nước (HCV4):</strong> Thiết lập đai rừng đệm tự nhiên rộng <strong>10–20m</strong> ven khe suối, hồ đập và mó nước ăn (tổng diện tích bảo vệ nguồn nước là 7,56 ha). Không khai thác cây sát bờ suối.</p>
-                <p>• <strong>Cam kết không hóa chất cấm:</strong> <strong>100% không sử dụng thuốc diệt cỏ (đặc biệt là Glyphosate)</strong> và các hóa chất cấm của FSC và Bộ NN&PTNT.</p>
-                <p>• <strong>Rừng Mẫu đại diện & Rừng Liên kết (628,40 ha):</strong> Nhóm đã ký Thỏa thuận phối hợp ngày 25/03/2025 với Ban QLR Đặc dụng, Phòng hộ tỉnh Thái Nguyên để cùng bảo vệ 628,40 ha rừng đặc dụng KBT Thần Sa - Phượng Hoàng giáp ranh, phối hợp tuần tra ngăn chặn bẫy bắt thú và chặt trộm gỗ quý.</p>
+                <p>&bull; <strong>Xử lý thực bì:</strong> Tuyệt đối nghiêm cấm đốt thực bì toàn diện. Áp dụng kỹ thuật băm vun dọn theo đường đồng mức để giữ ẩm, chống xói mòn và trả lại chất hữu cơ cho đất.</p>
+                <p>&bull; <strong>Bảo vệ nguồn nước (HCV4):</strong> Thiết lập đai rừng đệm tự nhiên rộng <strong>10–20m</strong> ven khe suối, hồ đập và mó nước ăn (tổng diện tích bảo vệ nguồn nước là 7,56 ha). Không khai thác cây sát bờ suối.</p>
+                <p>&bull; <strong>Cam kết không hóa chất cấm:</strong> <strong>100% không sử dụng thuốc diệt cỏ (đặc biệt là Glyphosate)</strong> và các hóa chất cấm của FSC và Bộ NN&PTNT.</p>
+                <p>&bull; <strong>Rừng Mẫu đại diện & Rừng Liên kết (628,40 ha):</strong> Nhóm đã ký Thỏa thuận phối hợp ngày 25/03/2025 với Ban QLR Đặc dụng, Phòng hộ tỉnh Thái Nguyên để cùng bảo vệ 628,40 ha rừng đặc dụng KBT Thần Sa - Phượng Hoàng giáp ranh, phối hợp tuần tra ngăn chặn bẫy bắt thú và chặt trộm gỗ quý.</p>
             </div>
 
             <!-- Tab 3 -->
             <div class="tab-pane" id="tab2">
                 <h3>3. Tác động Xã hội (SIA), An toàn Lao động & Cơ chế Khiếu nại</h3>
-                <p>• <strong>Quyền sử dụng đất:</strong> 100% diện tích tham gia FSC có Sổ đỏ hoặc hợp đồng giao khoán rõ ràng, không tranh chấp, không xâm lấn đất công.</p>
-                <p>• <strong>Lợi ích cộng đồng:</strong> Tạo việc làm cho 1.674 hộ gia đình và trên 90% lao động thời vụ địa phương. Tôn trọng bản sắc văn hóa của 08 dân tộc (Tày, Nùng, Sán Dìu, Mông, Kinh...); bảo vệ nguyên vẹn khu vực <strong>Rừng cúng, miếu thần rừng</strong> và vùng đệm di tích Mái Đá Ngườm.</p>
-                <p>• <strong>An toàn vệ sinh lao động (ATVSLĐ):</strong> Cung cấp bảo hộ lao động đầy đủ, hộp sơ cấp cứu tại hiện trường; huấn luyện an toàn cưa xăng; bình đẳng tiền lương nam-nữ; nghiêm cấm sử dụng lao động trẻ em dưới 18 tuổi.</p>
-                <p>• <strong>Quy trình khiếu nại 3 cấp minh bạch:</strong> Cấp 1 (Thôn/Xã hòa giải trong 07 ngày) ➔ Cấp 2 (Chủ thể Nhóm phối hợp UBND xã đối thoại trong 15 ngày) ➔ Cấp 3 (Cơ quan Nhà nước có thẩm quyền). Hotline tiếp nhận: <strong>0988.217.997</strong>.</p>
+                <p>&bull; <strong>Quyền sử dụng đất:</strong> 100% diện tích tham gia FSC có Sổ đỏ hoặc hợp đồng giao khoán rõ ràng, không tranh chấp, không xâm lấn đất công.</p>
+                <p>&bull; <strong>Lợi ích cộng đồng:</strong> Tạo việc làm cho 1.674 hộ gia đình và trên 90% lao động thời vụ địa phương. Tôn trọng bản sắc văn hóa của 08 dân tộc (Tày, Nùng, Sán Dìu, Mông, Kinh...); bảo vệ nguyên vẹn khu vực <strong>Rừng cúng, miếu thần rừng</strong> và vùng đệm di tích Mái Đá Ngườm.</p>
+                <p>&bull; <strong>An toàn vệ sinh lao động (ATVSLĐ):</strong> Cung cấp bảo hộ lao động đầy đủ, hộp sơ cấp cứu tại hiện trường; huấn luyện an toàn cưa xăng; bình đẳng tiền lương nam-nữ; nghiêm cấm sử dụng lao động trẻ em dưới 18 tuổi.</p>
+                <p>&bull; <strong>Quy trình khiếu nại 3 cấp minh bạch:</strong> Cấp 1 (Thôn/Xã hòa giải trong 07 ngày) &rarr; Cấp 2 (Chủ thể Nhóm phối hợp UBND xã đối thoại trong 15 ngày) &rarr; Cấp 3 (Cơ quan Nhà nước có thẩm quyền). Điện thoại tiếp nhận: <strong>0988.217.997</strong>.</p>
             </div>
         </div>
 
-        <!-- CONSULTATION FORM -->
+        <!-- Consultation Form -->
         <form id="consultationForm">
-            <!-- SECTION 1: STAKEHOLDER PROFILE -->
+            <!-- SECTION 1 -->
             <div class="form-section">
                 <div class="section-header">
                     <span>1. THÔNG TIN BÊN LIÊN QUAN THAM GIA THAM VẤN</span>
-                    <span style="font-size: 0.8rem; font-weight: normal; color: var(--slate-600);">(*) Bắt buộc điền</span>
+                    <span class="sub-note">(*) Bắt buộc điền</span>
                 </div>
 
                 <div class="grid-2">
@@ -631,193 +719,219 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label>Phân loại Nhóm Bên liên quan <span class="req">*</span></label>
-                    <select class="form-control" name="stakeholderGroup" id="stakeholderGroup" required>
-                        <option value="">-- Chọn nhóm bên liên quan phù hợp --</option>
-                        <option value="Cơ quan Quản lý Nhà nước (UBND huyện/xã, Phòng NN&PTNT...)">1. Cơ quan Quản lý Nhà nước (UBND huyện/xã, Phòng NN&PTNT...)</option>
-                        <option value="Cơ quan Kiểm lâm (Chi cục Kiểm lâm, Hạt Kiểm lâm, Kiểm lâm địa bàn)">2. Cơ quan Kiểm lâm (Chi cục Kiểm lâm, Hạt Kiểm lâm, Kiểm lâm địa bàn)</option>
-                        <option value="Đơn vị chủ rừng giáp ranh / Khu Bảo tồn (BQL Rừng đặc dụng Thần Sa)">3. Đơn vị chủ rừng giáp ranh / Khu Bảo tồn (BQL Rừng đặc dụng Thần Sa)</option>
-                        <option value="Tổ chức nghiên cứu, đào tạo, bảo tồn (ĐH Lâm nghiệp, WWF, PanNature...)">4. Tổ chức nghiên cứu, đào tạo, bảo tồn (ĐH Lâm nghiệp, WWF, PanNature...)</option>
-                        <option value="Trưởng xóm / Người có uy tín / Đại diện cộng đồng dân cư bản địa">5. Trưởng xóm / Người có uy tín / Đại diện cộng đồng dân cư bản địa</option>
-                        <option value="Hộ gia đình trồng rừng tham gia Nhóm chứng chỉ FSC">6. Hộ gia đình trồng rừng tham gia Nhóm chứng chỉ FSC</option>
-                        <option value="Hộ dân sinh sống lân cận / Cộng đồng địa phương giáp ranh">7. Hộ dân sinh sống lân cận / Cộng đồng địa phương giáp ranh</option>
-                        <option value="Doanh nghiệp chế biến, thương mại và khách hàng tiêu thụ gỗ">8. Doanh nghiệp chế biến, thương mại và khách hàng tiêu thụ gỗ</option>
-                        <option value="Nhóm bên liên quan khác">9. Nhóm bên liên quan khác</option>
-                    </select>
+                <div class="grid-2 align-bottom">
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label>Phân loại Nhóm Bên liên quan <span class="req">*</span></label>
+                        <select class="form-control" name="stakeholderGroup" id="stakeholderGroup" required>
+                            <option value="">-- Chọn nhóm bên liên quan phù hợp --</option>
+                            <option value="Cơ quan Quản lý Nhà nước (UBND huyện/xã, Phòng NN&PTNT...)">1. Cơ quan Quản lý Nhà nước (UBND huyện/xã, Phòng NN&PTNT...)</option>
+                            <option value="Cơ quan Kiểm lâm (Chi cục Kiểm lâm, Hạt Kiểm lâm, Kiểm lâm địa bàn)">2. Cơ quan Kiểm lâm (Chi cục Kiểm lâm, Hạt Kiểm lâm, Kiểm lâm địa bàn)</option>
+                            <option value="Đơn vị chủ rừng giáp ranh / Khu Bảo tồn (BQL Rừng đặc dụng Thần Sa)">3. Đơn vị chủ rừng giáp ranh / Khu Bảo tồn (BQL Rừng đặc dụng Thần Sa)</option>
+                            <option value="Tổ chức nghiên cứu, đào tạo, bảo tồn (ĐH Lâm nghiệp, WWF, PanNature...)">4. Tổ chức nghiên cứu, đào tạo, bảo tồn (ĐH Lâm nghiệp, WWF, PanNature...)</option>
+                            <option value="Trưởng xóm / Người có uy tín / Đại diện cộng đồng dân cư bản địa">5. Trưởng xóm / Người có uy tín / Đại diện cộng đồng dân cư bản địa</option>
+                            <option value="Hộ gia đình trồng rừng tham gia Nhóm chứng chỉ FSC">6. Hộ gia đình trồng rừng tham gia Nhóm chứng chỉ FSC</option>
+                            <option value="Hộ dân sinh sống lân cận / Cộng đồng địa phương giáp ranh">7. Hộ dân sinh sống lân cận / Cộng đồng địa phương giáp ranh</option>
+                            <option value="Doanh nghiệp chế biến, thương mại và khách hàng tiêu thụ gỗ">8. Doanh nghiệp chế biến, thương mại và khách hàng tiêu thụ gỗ</option>
+                            <option value="Nhóm bên liên quan khác">9. Nhóm bên liên quan khác</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <button type="button" class="btn-fast-agree" id="btnQuickAgree1" onclick="handleQuickAgree()">
+                            <span class="btn-fast-agree-title">ĐỒNG THUẬN VÀ GỬI KẾT QUẢ THAM VẤN</span>
+                            <span class="btn-fast-agree-sub">Nhất trí 100% các nội dung & Xác nhận gửi phiếu</span>
+                        </button>
+                    </div>
                 </div>
             </div>
 
-            <!-- SECTION 2: SURVEY QUESTIONS -->
+            <!-- SECTION 2 -->
             <div class="form-section">
                 <div class="section-header">
                     <span>2. Ý KIẾN THAM VẤN THEO CÁC TIÊU CHÍ FSC</span>
-                    <span style="font-size: 0.8rem; font-weight: normal; color: var(--slate-600);">Chọn mức độ đánh giá và ghi ý kiến cụ thể</span>
+                    <span class="sub-note">Đánh giá mức độ đồng thuận và bổ sung ý kiến</span>
                 </div>
 
-                <!-- Q1 -->
+                <!-- TC 1 -->
                 <div class="question-card">
-                    <div class="q-header">
-                        <div class="q-num">1</div>
-                        <div class="q-title">Quyền sử dụng đất, Ranh giới lâm phận và Tính hợp pháp (Nguyên tắc 1 & 2)</div>
-                    </div>
-                    <div class="q-desc">Ý kiến về tính pháp lý của sổ đỏ/hợp đồng giao đất của 1.674 hộ gia đình; tính rõ ràng của ranh giới lô rừng; tình trạng tranh chấp đất đai với các hộ xung quanh hoặc đất rừng công cộng.</div>
+                    <div class="question-title">Tiêu chí 1: Tính pháp lý về Đất đai, Ranh giới và Quyền sử dụng đất</div>
+                    <div class="question-desc">Ranh giới 3.804,59 ha rõ ràng; 100% diện tích có Giấy chứng nhận QSDĐ hoặc hợp đồng giao khoán, không tranh chấp, không xâm lấn đất công.</div>
                     <div class="options-group">
-                        <label class="radio-label"><input type="radio" name="q1_land" value="Hoàn toàn nhất trí / Ranh giới rõ ràng, không tranh chấp" checked> 🟢 Hoàn toàn nhất trí / Rõ ràng</label>
-                        <label class="radio-label"><input type="radio" name="q1_land" value="Nhất trí có điều kiện / Cần rà soát mốc giới một số lô"> 🟡 Nhất trí có điều kiện / Cần lưu ý</label>
-                        <label class="radio-label"><input type="radio" name="q1_land" value="Không nhất trí / Đề nghị xác minh tranh chấp"> 🔴 Không nhất trí / Cần chỉnh sửa</label>
+                        <label class="radio-label checked">
+                            <input type="radio" name="q1_land" value="Hoàn toàn nhất trí / Ranh giới rõ ràng, không tranh chấp" checked>
+                            <span>Hoàn toàn nhất trí &mdash; Ranh giới rõ ràng, không tranh chấp</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="q1_land" value="Nhất trí có điều kiện / Cần rà soát thêm thực địa">
+                            <span>Nhất trí có điều kiện &mdash; Cần rà soát, đo đạc thêm một số vị trí giáp ranh</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="q1_land" value="Không nhất trí / Có tranh chấp, chồng lấn">
+                            <span>Không nhất trí &mdash; Đang có tranh chấp hoặc chồng lấn ranh giới</span>
+                        </label>
                     </div>
-                    <div class="comment-box">
-                        <textarea class="form-control" name="q1_note" placeholder="Ghi chú thêm ý kiến về đất đai và ranh giới (nếu có)..."></textarea>
-                    </div>
+                    <input type="text" class="form-control" name="q1_note" placeholder="Ghi chú thêm ý kiến về đất đai và ranh giới (nếu có)...">
                 </div>
 
-                <!-- Q2 -->
+                <!-- TC 2 -->
                 <div class="question-card">
-                    <div class="q-header">
-                        <div class="q-num">2</div>
-                        <div class="q-title">An toàn lao động, Quyền người lao động & Bình đẳng giới (Nguyên tắc 4)</div>
-                    </div>
-                    <div class="q-desc">Ý kiến về việc trang bị bảo hộ lao động, túi sơ cấp cứu hiện trường khai thác, huấn luyện vận hành cưa xăng, trả công bình đẳng nam-nữ và cam kết không sử dụng lao động trẻ em dưới 18 tuổi.</div>
+                    <div class="question-title">Tiêu chí 2: Quyền của người lao động, Bình đẳng giới & An toàn vệ sinh lao động</div>
+                    <div class="question-desc">Cam kết bình đẳng giới và tiền lương, bảo đảm thiết bị bảo hộ lao động, tập huấn an toàn cưa xăng, cấm 100% lao động trẻ em dưới 18 tuổi.</div>
                     <div class="options-group">
-                        <label class="radio-label"><input type="radio" name="q2_labor" value="Hoàn toàn nhất trí / Đảm bảo tốt an toàn & bình đẳng" checked> 🟢 Hoàn toàn nhất trí / Tốt</label>
-                        <label class="radio-label"><input type="radio" name="q2_labor" value="Nhất trí có điều kiện / Cần tăng cường tập huấn BHLĐ"> 🟡 Nhất trí có điều kiện / Cần lưu ý</label>
-                        <label class="radio-label"><input type="radio" name="q2_labor" value="Không nhất trí / Đề nghị kiểm tra nghiêm ngặt an toàn"> 🔴 Không nhất trí / Cần chỉnh sửa</label>
+                        <label class="radio-label checked">
+                            <input type="radio" name="q2_labor" value="Hoàn toàn nhất trí / Đảm bảo tốt an toàn & bình đẳng" checked>
+                            <span>Hoàn toàn nhất trí &mdash; Đảm bảo tốt chế độ an toàn và bình đẳng</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="q2_labor" value="Nhất trí có điều kiện / Cần tăng cường BHLĐ">
+                            <span>Nhất trí có điều kiện &mdash; Cần tăng cường tập huấn và cấp phát bảo hộ định kỳ</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="q2_labor" value="Không nhất trí / Chưa đảm bảo chế độ">
+                            <span>Không nhất trí &mdash; Chưa đảm bảo an toàn lao động hoặc chế độ công bằng</span>
+                        </label>
                     </div>
-                    <div class="comment-box">
-                        <textarea class="form-control" name="q2_note" placeholder="Ghi chú thêm ý kiến về an toàn lao động và chế độ (nếu có)..."></textarea>
-                    </div>
+                    <input type="text" class="form-control" name="q2_note" placeholder="Ghi chú thêm ý kiến về an toàn lao động và chế độ (nếu có)...">
                 </div>
 
-                <!-- Q3 -->
+                <!-- TC 3 -->
                 <div class="question-card">
-                    <div class="q-header">
-                        <div class="q-num">3</div>
-                        <div class="q-title">Bảo vệ Môi trường, Nguồn nước (HCV4) & Không dùng hóa chất cấm (Nguyên tắc 6 & 10)</div>
-                    </div>
-                    <div class="q-desc">Ý kiến về cam kết không đốt thực bì tràn lan (chỉ băm vun theo đường đồng mức); bảo vệ đai đệm ven khe suối 10–20m; tuyệt đối không sử dụng thuốc diệt cỏ Glyphosate và hóa chất cấm FSC.</div>
+                    <div class="question-title">Tiêu chí 3: Tác động môi trường (EIA), Bảo vệ nguồn nước & Không hóa chất cấm</div>
+                    <div class="question-desc">Nghiêm cấm đốt dọn thực bì toàn diện, đai đệm bảo vệ khe suối 10–20m, cam kết 100% không sử dụng Glyphosate và thuốc diệt cỏ độc hại.</div>
                     <div class="options-group">
-                        <label class="radio-label"><input type="radio" name="q3_env" value="Hoàn toàn nhất trí / Biện pháp bảo vệ môi trường rất thiết thực" checked> 🟢 Hoàn toàn nhất trí / Rất tốt</label>
-                        <label class="radio-label"><input type="radio" name="q3_env" value="Nhất trí có điều kiện / Cần giám sát chặt việc không đốt thực bì"> 🟡 Nhất trí có điều kiện / Cần lưu ý</label>
-                        <label class="radio-label"><input type="radio" name="q3_env" value="Không nhất trí / Lo ngại ô nhiễm nguồn nước"> 🔴 Không nhất trí / Cần chỉnh sửa</label>
+                        <label class="radio-label checked">
+                            <input type="radio" name="q3_env" value="Hoàn toàn nhất trí / Biện pháp bảo vệ môi trường rất thiết thực" checked>
+                            <span>Hoàn toàn nhất trí &mdash; Biện pháp bảo vệ môi trường, nguồn nước rất thiết thực</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="q3_env" value="Nhất trí có điều kiện / Cần giám sát chặt đai ven suối">
+                            <span>Nhất trí có điều kiện &mdash; Cần kiểm tra chặt việc cấm thuốc diệt cỏ và đai đệm suối</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="q3_env" value="Không nhất trí / Lo ngại ô nhiễm môi trường">
+                            <span>Không nhất trí &mdash; Chưa yên tâm về vấn đề xói mòn hoặc nguồn nước sinh hoạt</span>
+                        </label>
                     </div>
-                    <div class="comment-box">
-                        <textarea class="form-control" name="q3_note" placeholder="Ghi chú thêm ý kiến về môi trường, nguồn nước và hóa chất (nếu có)..."></textarea>
-                    </div>
+                    <input type="text" class="form-control" name="q3_note" placeholder="Ghi chú thêm ý kiến về môi trường, nguồn nước và hóa chất (nếu có)...">
                 </div>
 
-                <!-- Q4 -->
+                <!-- TC 4 -->
                 <div class="question-card">
-                    <div class="q-header">
-                        <div class="q-num">4</div>
-                        <div class="q-title">Bảo tồn ĐDSH, Rừng Mẫu đại diện 628,40 ha & Rừng Nguyên vẹn (IFL) (Nguyên tắc 6 & 9)</div>
-                    </div>
-                    <div class="q-desc">Ý kiến về kết quả phân tích 100% ngoài IFL và việc ký Thỏa thuận 25/03/2025 với Ban QLR Đặc dụng bảo vệ 628,40 ha rừng KBT Thần Sa làm Rừng Mẫu đại diện, ngăn chặn bẫy bắt thú hoang dã.</div>
+                    <div class="question-title">Tiêu chí 4: Giá trị Bảo tồn Cao (HCVF) & Mô hình Rừng Mẫu liên kết (628,40 ha)</div>
+                    <div class="question-desc">Nhóm liên kết phối hợp bảo vệ 628,40 ha rừng đặc dụng Khu BTTN Thần Sa - Phượng Hoàng, phối hợp tuần tra ngăn chặn săn bẫy thú và khai thác trái phép.</div>
                     <div class="options-group">
-                        <label class="radio-label"><input type="radio" name="q4_bio" value="Hoàn toàn nhất trí / Mô hình phối hợp liên kết bảo tồn rất hiệu quả" checked> 🟢 Hoàn toàn nhất trí / Phù hợp</label>
-                        <label class="radio-label"><input type="radio" name="q4_bio" value="Nhất trí có điều kiện / Cần tăng cường tuần tra chung xe máy"> 🟡 Nhất trí có điều kiện / Cần lưu ý</label>
-                        <label class="radio-label"><input type="radio" name="q4_bio" value="Không nhất trí / Đề nghị làm rõ ranh giới liên kết"> 🔴 Không nhất trí / Cần chỉnh sửa</label>
+                        <label class="radio-label checked">
+                            <input type="radio" name="q4_bio" value="Hoàn toàn nhất trí / Mô hình phối hợp liên kết bảo tồn rất hiệu quả" checked>
+                            <span>Hoàn toàn nhất trí &mdash; Mô hình phối hợp liên kết bảo tồn rất hiệu quả</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="q4_bio" value="Nhất trí có điều kiện / Cần tăng tuần tra chung">
+                            <span>Nhất trí có điều kiện &mdash; Cần tăng cường tuần tra chung giữa hộ và kiểm lâm</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="q4_bio" value="Không nhất trí / Chưa rõ cơ chế phối hợp">
+                            <span>Không nhất trí &mdash; Chưa rõ trách nhiệm bảo vệ giữa các bên giáp ranh</span>
+                        </label>
                     </div>
-                    <div class="comment-box">
-                        <textarea class="form-control" name="q4_note" placeholder="Ghi chú thêm ý kiến về bảo tồn động thực vật và rừng liên kết (nếu có)..."></textarea>
-                    </div>
+                    <input type="text" class="form-control" name="q4_note" placeholder="Ghi chú thêm ý kiến về bảo tồn động thực vật và rừng liên kết (nếu có)...">
                 </div>
 
-                <!-- Q5 -->
+                <!-- TC 5 -->
                 <div class="question-card">
-                    <div class="q-header">
-                        <div class="q-num">5</div>
-                        <div class="q-title">Quyền của Cộng đồng địa phương & Giá trị Văn hóa Tâm linh (HCV6) (Nguyên tắc 3 & 9)</div>
-                    </div>
-                    <div class="q-desc">Ý kiến về việc tôn trọng phong tục tập quán của 08 dân tộc bản địa (Tày, Nùng, Sán Dìu, Mông, Kinh...); bảo vệ nguyên vẹn khu vực Rừng cúng / Rừng thiêng đầu nguồn, miếu thờ thần rừng, nghĩa trang ven rừng.</div>
+                    <div class="question-title">Tiêu chí 5: Giá trị Văn hóa truyền thống, Tâm linh (HCV6) & Quyền cộng đồng bản địa</div>
+                    <div class="question-desc">Bảo vệ nguyên vẹn các khu rừng cúng, miếu thần rừng, nguồn nước mó của đồng bào Tày, Nùng, Sán Dìu, Mông; vùng đệm di tích khảo cổ Mái Đá Ngườm.</div>
                     <div class="options-group">
-                        <label class="radio-label"><input type="radio" name="q5_social" value="Hoàn toàn nhất trí / Tôn trọng tốt phong tục và tâm linh" checked> 🟢 Hoàn toàn nhất trí / Tốt</label>
-                        <label class="radio-label"><input type="radio" name="q5_social" value="Nhất trí có điều kiện / Cần phối hợp chặt với Trưởng xóm bản"> 🟡 Nhất trí có điều kiện / Cần lưu ý</label>
-                        <label class="radio-label"><input type="radio" name="q5_social" value="Không nhất trí / Lo ngại ảnh hưởng điểm tín ngưỡng"> 🔴 Không nhất trí / Cần chỉnh sửa</label>
+                        <label class="radio-label checked">
+                            <input type="radio" name="q5_social" value="Hoàn toàn nhất trí / Tôn trọng tốt phong tục và tâm linh" checked>
+                            <span>Hoàn toàn nhất trí &mdash; Tôn trọng tốt phong tục tập quán và văn hóa tâm linh</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="q5_social" value="Nhất trí có điều kiện / Cần cắm mốc rõ rừng cúng">
+                            <span>Nhất trí có điều kiện &mdash; Cần xác định ranh giới rõ ràng hơn các khu miếu cúng</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="q5_social" value="Không nhất trí / Ảnh hưởng văn hóa cộng đồng">
+                            <span>Không nhất trí &mdash; Có nguy cơ tác động đến các địa điểm tâm linh truyền thống</span>
+                        </label>
                     </div>
-                    <div class="comment-box">
-                        <textarea class="form-control" name="q5_note" placeholder="Ghi chú thêm ý kiến về văn hóa, tâm linh và cộng đồng (nếu có)..."></textarea>
-                    </div>
+                    <input type="text" class="form-control" name="q5_note" placeholder="Ghi chú thêm ý kiến về văn hóa, tâm linh và cộng đồng (nếu có)...">
                 </div>
 
-                <!-- Q6 -->
+                <!-- TC 6 -->
                 <div class="question-card">
-                    <div class="q-header">
-                        <div class="q-num">6</div>
-                        <div class="q-title">Phương án QLRBV (2025–2031) & Mức khai thác cho phép hàng năm (AAC) (Nguyên tắc 5, 7 & 8)</div>
-                    </div>
-                    <div class="q-desc">Ý kiến về mục tiêu phát triển rừng gỗ lớn luân kỳ 6–7 năm; sản lượng khai thác AAC 500 ha/năm (60.000–80.000 m³/năm); chính sách bao tiêu sản phẩm gỗ FSC cao hơn thị trường 10%–15%.</div>
+                    <div class="question-title">Tiêu chí 6: Phương án Quản lý Rừng Bền vững (QLRBV) & Kế hoạch Khai thác (AAC)</div>
+                    <div class="question-desc">Kéo dài chu kỳ gỗ lớn 6–7 năm, sản lượng khai thác hàng năm 60.000–80.000 m³/năm, cam kết thu mua cao hơn thị trường tự do 10–15%.</div>
                     <div class="options-group">
-                        <label class="radio-label"><input type="radio" name="q6_mgmt" value="Hoàn toàn nhất trí / Phương án sản xuất kinh doanh bền vững, hiệu quả" checked> 🟢 Hoàn toàn nhất trí / Khả thi</label>
-                        <label class="radio-label"><input type="radio" name="q6_mgmt" value="Nhất trí có điều kiện / Cần hỗ trợ giống và kỹ thuật tỉa thưa"> 🟡 Nhất trí có điều kiện / Cần lưu ý</label>
-                        <label class="radio-label"><input type="radio" name="q6_mgmt" value="Không nhất trí / Đề nghị điều chỉnh kế hoạch khai thác"> 🔴 Không nhất trí / Cần chỉnh sửa</label>
+                        <label class="radio-label checked">
+                            <input type="radio" name="q6_mgmt" value="Hoàn toàn nhất trí / Phương án sản xuất kinh doanh bền vững, hiệu quả" checked>
+                            <span>Hoàn toàn nhất trí &mdash; Phương án sản xuất kinh doanh bền vững, hiệu quả</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="q6_mgmt" value="Nhất trí có điều kiện / Cần hỗ trợ cây giống tốt">
+                            <span>Nhất trí có điều kiện &mdash; Cần bảo đảm giá bao tiêu và cung ứng giống chuẩn</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="q6_mgmt" value="Không nhất trí / Chưa phù hợp thực tế">
+                            <span>Không nhất trí &mdash; Chu kỳ hoặc phương thức khai thác chưa thuận tiện</span>
+                        </label>
                     </div>
-                    <div class="comment-box">
-                        <textarea class="form-control" name="q6_note" placeholder="Ghi chú thêm ý kiến về phương án sản xuất và tiêu thụ gỗ (nếu có)..."></textarea>
-                    </div>
+                    <input type="text" class="form-control" name="q6_note" placeholder="Ghi chú thêm ý kiến về phương án sản xuất và tiêu thụ gỗ (nếu có)...">
                 </div>
 
-                <!-- Q7 -->
-                <div class="question-card">
-                    <div class="q-header">
-                        <div class="q-num">7</div>
-                        <div class="q-title">Ý kiến đóng góp khác, Đề xuất hoặc Kiến nghị đối với Nhóm Chứng chỉ Rừng</div>
-                    </div>
-                    <div class="q-desc">Vui lòng nêu các ý kiến đề xuất khác về cơ chế hợp tác, giải quyết khiếu nại, tập huấn kỹ thuật lâm nghiệp hoặc các vấn đề cần lưu ý bổ sung:</div>
-                    <div class="comment-box">
-                        <textarea class="form-control" name="general_feedback" id="general_feedback" style="min-height: 80px;" placeholder="Nhập ý kiến đóng góp, kiến nghị cụ thể của bạn tại đây..."></textarea>
-                    </div>
+                <!-- General Feedback -->
+                <div class="question-card" style="background: #ffffff;">
+                    <div class="question-title">Ý kiến đóng góp khác, Đề xuất hoặc Kiến nghị đối với Nhóm Chứng chỉ Rừng</div>
+                    <div class="question-desc">Vui lòng nêu các ý kiến đề xuất khác về cơ chế hợp tác, giải quyết khiếu nại, tập huấn kỹ thuật lâm nghiệp hoặc các vấn đề cần lưu ý bổ sung:</div>
+                    <textarea class="form-control" name="general_feedback" id="general_feedback" rows="3" placeholder="Nhập ý kiến đóng góp, kiến nghị cụ thể của bạn tại đây..."></textarea>
                 </div>
             </div>
 
-            <!-- SECTION 3: CONFIRMATION & COMMITMENT -->
+            <!-- SECTION 3: COMMITMENT & SUBMIT -->
             <div class="commit-container">
-                <label class="commit-check-label">
+                <label class="commit-label">
                     <input type="checkbox" name="agree_commitment" id="agree_commitment" required>
-                    <span>TÔI XÁC NHẬN ĐÃ ĐỌC HIỂU ĐẦY ĐỦ NỘI DUNG TÓM TẮT PHƯƠNG ÁN QLRBV VÀ CÁC BÁO CÁO TÁC ĐỘNG CỦA NHÓM CHỨNG CHỈ RỪNG VĂN HÁN — TRƯỜNG THỊNH PHÁT; HOÀN TOÀN NHẤT TRÍ VỚI CÁC CAM KẾT MÔI TRƯỜNG - XÃ HỘI VÀ ĐỒNG Ý GỬI PHIẾU THAM VẤN NÀY ĐẾN BAN QUẢN LÝ NHÓM.</span>
+                    <span>TÔI XÁC NHẬN ĐÃ ĐỌC HIỂU ĐẦY ĐỦ NỘI DUNG TÓM TẮT PHƯƠNG ÁN QUẢN LÝ RỪNG BỀN VỮNG VÀ CÁC BÁO CÁO TÁC ĐỘNG CỦA NHÓM CHỨNG CHỈ RỪNG VĂN HÁN — TRƯỜNG THỊNH PHÁT; HOÀN TOÀN NHẤT TRÍ VỚI CÁC CAM KẾT VỀ MÔI TRƯỜNG, XÃ HỘI VÀ ĐỒNG Ý GỬI PHIẾU THAM VẤN NÀY ĐẾN BAN QUẢN LÝ NHÓM.</span>
                 </label>
             </div>
 
-            <div style="margin: 14px 0 20px 0; display: flex; justify-content: flex-end; align-items: center; gap: 8px; font-size: 0.92rem; color: var(--slate-600);">
-                <span>🕒 Thời gian gửi phiếu:</span>
-                <strong id="displayDate" style="color: var(--slate-800); background: #f1f5f9; padding: 4px 12px; border-radius: 6px; border: 1px solid var(--border);"></strong>
+            <div class="date-display-row">
+                <span>Thời gian gửi phiếu:</span>
+                <strong id="displayDate"></strong>
             </div>
 
-            <!-- SUBMIT BUTTONS -->
+            <!-- Submit Buttons -->
             <div class="submit-bar">
-                <button type="submit" class="btn-submit" id="btnSubmit">
-                    <span>📤</span> GỬI PHIẾU THAM VẤN CHÍNH THỨC
+                <button type="button" class="btn-bottom-quick" id="btnQuickAgree" onclick="handleQuickAgree()">
+                    ĐỒNG THUẬN VÀ GỬI KẾT QUẢ THAM VẤN
                 </button>
-                <button type="button" class="btn-quick" id="btnQuickAgree">
-                    <span>⚡</span> ĐỒNG THUẬN TOÀN BỘ
+                <button type="submit" class="btn-bottom-detailed" id="btnSubmit">
+                    GỬI PHIẾU THEO Ý KIẾN ĐÃ ĐÁNH GIÁ
                 </button>
             </div>
         </form>
     </div>
 
-    <!-- Footer -->
-    <div class="footer">
-        <div><strong>CÔNG TY TNHH THƯƠNG MẠI VÀ ĐẦU TƯ TRƯỜNG THỊNH PHÁT</strong></div>
+    <!-- Official Footer -->
+    <div class="footer-official">
+        <div class="f-company">CÔNG TY TNHH THƯƠNG MẠI VÀ ĐẦU TƯ TRƯỜNG THỊNH PHÁT</div>
         <div>Nhóm Chứng chỉ Rừng FSC Văn Hán — Thái Nguyên (Mã chứng chỉ: FSC-C183027)</div>
-        <div>Địa chỉ: Xã Nam Hòa và Xã Văn Hán, Huyện Đồng Hỷ, Tỉnh Thái Nguyên | Hotline/Zalo: <strong>0988.217.997</strong></div>
-        <div style="margin-top: 10px;">
-            <a href="tai-lieu-tom-tat.html" target="_blank">📄 Tài liệu tóm tắt (3 Trang)</a> | 
-            <a href="report.html">📊 Quản trị Báo cáo</a>
+        <div>Địa chỉ: Xã Nam Hòa và Xã Văn Hán, Huyện Đồng Hỷ, Tỉnh Thái Nguyên | Điện thoại: 0988.217.997</div>
+        <div class="f-links">
+            <a href="tai-lieu-tom-tat.html" target="_blank">Tài liệu tóm tắt (03 trang)</a> | 
+            <a href="report.html">Hệ thống quản trị</a>
         </div>
     </div>
 </div>
 
-<!-- SUCCESS POPUP MODAL -->
+<!-- Success Popup Modal -->
 <div class="modal-overlay" id="successModal">
     <div class="modal-card">
-        <div class="modal-icon">✅</div>
-        <div class="modal-title">NỘP PHIẾU THAM VẤN THÀNH CÔNG!</div>
+        <div class="modal-title">TIẾP NHẬN PHIẾU THAM VẤN THÀNH CÔNG</div>
         <div class="modal-body" id="modalBodyText">
-            Cảm ơn bạn đã tham gia đóng góp ý kiến tham vấn cho Phương án Quản lý rừng bền vững của Nhóm Chứng chỉ Rừng Văn Hán — Trường Thịnh Phát (FSC-C183027). Ý kiến của bạn đã được ghi nhận vào hệ thống cơ sở dữ liệu FSC.
+            Cảm ơn Ông/Bà đã tham gia đóng góp ý kiến tham vấn cho Phương án Quản lý rừng bền vững của Nhóm Chứng chỉ Rừng Văn Hán — Trường Thịnh Phát (FSC-C183027). Ý kiến của Ông/Bà đã được lưu trữ chính thức vào hệ thống cơ sở dữ liệu FSC.
         </div>
         <div class="modal-actions">
-            <button class="btn btn-outline" onclick="closeSuccessModal()">Đóng thông báo</button>
-            <a href="report.html" class="btn">📊 Xem Trang Báo Cáo</a>
+            <button class="btn-modal btn-modal-outline" onclick="closeSuccessModal()">Đóng thông báo</button>
+            <a href="report.html" class="btn-modal btn-modal-primary">Xem báo cáo tổng hợp</a>
         </div>
     </div>
 </div>
@@ -829,7 +943,7 @@
         document.querySelectorAll('.tab-pane').forEach((p, i) => p.classList.toggle('active', i === index));
     }
 
-    // Auto sync Name to Signer & Date
+    // Auto set Date
     const fullNameInput = document.getElementById('fullName');
     const displayDate = document.getElementById('displayDate');
 
@@ -851,16 +965,11 @@
         }
     });
 
-    // 1-Click Agree
-    document.getElementById('btnQuickAgree').addEventListener('click', () => {
+    // Quick Agree Action (Available in Section 1 and bottom of form)
+    function handleQuickAgree() {
         if (!fullNameInput.value.trim()) {
-            alert('Vui lòng nhập Họ và tên người tham vấn trước khi bấm Đồng thuận toàn bộ!');
+            alert('Vui lòng nhập Họ và tên người tham vấn trước khi gửi kết quả!');
             fullNameInput.focus();
-            return;
-        }
-        if (!document.getElementById('phone').value.trim()) {
-            alert('Vui lòng nhập Số điện thoại liên hệ!');
-            document.getElementById('phone').focus();
             return;
         }
         if (!document.getElementById('orgName').value.trim()) {
@@ -871,6 +980,11 @@
         if (!document.getElementById('commune').value) {
             alert('Vui lòng chọn Địa bàn xã liên quan!');
             document.getElementById('commune').focus();
+            return;
+        }
+        if (!document.getElementById('phone').value.trim()) {
+            alert('Vui lòng nhập Số điện thoại liên hệ!');
+            document.getElementById('phone').focus();
             return;
         }
         if (!document.getElementById('stakeholderGroup').value) {
@@ -891,11 +1005,13 @@
         });
 
         document.getElementById('agree_commitment').checked = true;
-        document.getElementById('general_feedback').value = 'Hoàn toàn nhất trí và ủng hộ 100% Phương án QLRBV & các báo cáo tác động FSC của Nhóm Văn Hán - Trường Thịnh Phát.';
+        if (!document.getElementById('general_feedback').value.trim()) {
+            document.getElementById('general_feedback').value = 'Hoàn toàn nhất trí và ủng hộ 100% Phương án QLRBV & các báo cáo tác động FSC của Nhóm Văn Hán - Trường Thịnh Phát.';
+        }
         executeSubmit(true);
-    });
+    }
 
-    // Form Submit
+    // Standard Submit Form
     document.getElementById('consultationForm').addEventListener('submit', function(e) {
         e.preventDefault();
         executeSubmit(false);
@@ -918,43 +1034,41 @@
                 body: JSON.stringify(data)
             });
         } catch (err) {
-            console.log('Running standalone/offline mode, storing in localStorage.');
+            console.log('Running in client/standalone mode, saving to localStorage.');
         }
 
-        // Always store in LocalStorage for persistence across GitHub Pages
+        // Store in LocalStorage for persistence
         let list = JSON.parse(localStorage.getItem('ttp_consultations') || '[]');
-        list.unshift(data); // Add to beginning
+        list.unshift(data);
         localStorage.setItem('ttp_consultations', JSON.stringify(list));
 
-        // Open modal
-        document.getElementById('modalBodyText').innerHTML = `
-            <strong>Kính gửi: ${data.fullName} (${data.jobTitle || 'Đại diện'})</strong><br>
-            Cơ quan/Đơn vị: ${data.orgName} — ${data.commune}<br><br>
-            Phiếu tham vấn của bạn đã được tiếp nhận thành công vào cơ sở dữ liệu FSC Văn Hán - Trường Thịnh Phát vào lúc <strong>${data.timestamp}</strong>.
-        `;
+        // Open Success Modal
+        const modalBody = document.getElementById('modalBodyText');
+        if (modalBody) {
+            modalBody.innerHTML = `
+                Cảm ơn <strong>${data.fullName}</strong> (${data.jobTitle || 'Đại diện'}, ${data.orgName}) đã hoàn thành tham vấn.<br><br>
+                Phiếu tham vấn đã được tiếp nhận chính thức vào hệ thống cơ sở dữ liệu FSC của Nhóm Chứng chỉ Rừng Văn Hán — Trường Thịnh Phát (Mã chứng chỉ: FSC-C183027).
+            `;
+        }
         document.getElementById('successModal').classList.add('active');
     }
 
     function closeSuccessModal() {
         document.getElementById('successModal').classList.remove('active');
         document.getElementById('consultationForm').reset();
-        displaySigner.value = '';
     }
 
-    // DRM Protection on Summary Document Content
+    // Silent Content Protection on Summary Document
     const summaryBox = document.querySelector('.summary-box');
     if (summaryBox) {
         summaryBox.addEventListener('contextmenu', e => e.preventDefault());
         summaryBox.addEventListener('copy', e => {
             e.preventDefault();
             if (e.clipboardData) e.clipboardData.setData('text/plain', '');
-            
             return false;
         });
         summaryBox.addEventListener('selectstart', e => e.preventDefault());
     }
-
 </script>
-
 </body>
 </html>
