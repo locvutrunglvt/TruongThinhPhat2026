@@ -496,18 +496,7 @@
             position: relative;
             overflow: hidden;
         }
-        .summary-watermark {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 5;
-            opacity: 0.09;
-            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='380' height='220'><text x='20' y='110' fill='%23dc2626' font-size='13' font-family='sans-serif' font-weight='bold' transform='rotate(-22 140 110)'>BẢO MẬT FSC-C183027 • CẤM SAO CHÉP</text><text x='30' y='135' fill='%230f172a' font-size='11' font-family='sans-serif' font-weight='bold' transform='rotate(-22 140 110)'>CHỈ XEM THAM VẤN TRỰC TUYẾN</text></svg>");
-            background-repeat: repeat;
-        }
+        
         @media print {
             .summary-box {
                 display: none !important;
@@ -546,7 +535,7 @@
     <div class="main-content">
         <!-- 3-PAGE SUMMARY BOX -->
         <div class="summary-box">
-            <div class="summary-watermark"></div>
+            
             <div class="summary-header">
                 <div class="summary-title">
                     📖 BẢN TÓM TẮT THÔNG TIN THAM VẤN (03 TRANG TÀI LIỆU CỐT LÕI)
@@ -570,7 +559,7 @@
                 <p>• <strong>Chủ thể:</strong> Công ty TNHH Thương mại & Đầu tư Trường Thịnh Phát liên kết với 1.674 hộ gia đình chủ rừng trồng sản xuất tại 04 xã thuộc tỉnh Thái Nguyên: Văn Hán (2.821,49 ha), Văn Lăng (469,10 ha), Quang Sơn (295,33 ha), Đồng Hỷ (218,67 ha) — Tổng diện tích là <strong>3.804,59 ha</strong> với 2.198 lô rừng Keo tai tượng và Keo lai.</p>
                 <p>• <strong>Định hướng kinh tế & Rừng gỗ lớn:</strong> Kéo dài chu kỳ khai thác lên 6–7 năm để đạt đường kính gỗ lớn (D1.3 ≥ 16–18 cm). Mức khai thác bền vững hàng năm (AAC) đạt <strong>500 ha/năm</strong>, sản lượng gỗ bình quân <strong>60.000 – 80.000 m³/năm</strong>, luôn nhỏ hơn lượng tăng trưởng hàng năm.</p>
                 <p>• <strong>Bao tiêu sản phẩm:</strong> Công ty cam kết thu mua gỗ rừng trồng có chứng chỉ FSC cao hơn giá thị trường tự do từ <strong>10% đến 15%</strong>.</p>
-                <p>• <strong>Phân tích Rừng Nguyên vẹn (IFL):</strong> 100% diện tích rừng trồng của Nhóm nằm hoàn toàn bên ngoài các khối Rừng Nguyên vẹn (IFL) của Global Forest Watch. Cách xa Khu Bảo tồn Hồ Núi Cốc 9 km và VQG Tam Đảo 21 km.</p>
+                <p>• <strong>Phân tích Rừng Nguyên vẹn (IFL):</strong> 100% diện tích rừng trồng của Nhóm nằm hoàn toàn bên ngoài các khối Rừng Nguyên vẹn (IFL) của Tổ chức Giám sát Rừng Toàn cầu (Global Forest Watch). Cách xa Khu Bảo tồn Hồ Núi Cốc 9 km và VQG Tam Đảo 21 km.</p>
             </div>
 
             <!-- Tab 2 -->
@@ -789,15 +778,9 @@
                 </label>
             </div>
 
-            <div class="grid-2">
-                <div class="form-group">
-                    <label>Người ký tên xác nhận tham vấn:</label>
-                    <input type="text" class="form-control" id="displaySigner" placeholder="Họ tên người ký" readonly style="background: #f8fafc; font-weight: 700;">
-                </div>
-                <div class="form-group">
-                    <label>Ngày gửi phiếu tham vấn:</label>
-                    <input type="text" class="form-control" id="displayDate" readonly style="background: #f8fafc;">
-                </div>
+            <div style="margin: 14px 0 20px 0; display: flex; justify-content: flex-end; align-items: center; gap: 8px; font-size: 0.92rem; color: var(--slate-600);">
+                <span>🕒 Thời gian gửi phiếu:</span>
+                <strong id="displayDate" style="color: var(--slate-800); background: #f1f5f9; padding: 4px 12px; border-radius: 6px; border: 1px solid var(--border);"></strong>
             </div>
 
             <!-- SUBMIT BUTTONS -->
@@ -806,7 +789,7 @@
                     <span>📤</span> GỬI PHIẾU THAM VẤN CHÍNH THỨC
                 </button>
                 <button type="button" class="btn-quick" id="btnQuickAgree">
-                    <span>⚡</span> ĐỒNG THUẬN TOÀN BỘ (1-CLICK AGREE)
+                    <span>⚡</span> ĐỒNG THUẬN TOÀN BỘ
                 </button>
             </div>
         </form>
@@ -848,15 +831,12 @@
 
     // Auto sync Name to Signer & Date
     const fullNameInput = document.getElementById('fullName');
-    const displaySigner = document.getElementById('displaySigner');
     const displayDate = document.getElementById('displayDate');
 
     const now = new Date();
-    displayDate.value = now.toLocaleDateString('vi-VN') + ' ' + now.toLocaleTimeString('vi-VN', {hour: '2-digit', minute:'2-digit'});
-
-    fullNameInput.addEventListener('input', (e) => {
-        displaySigner.value = e.target.value;
-    });
+    if (displayDate) {
+        displayDate.innerText = now.toLocaleDateString('vi-VN') + ' ' + now.toLocaleTimeString('vi-VN', {hour: '2-digit', minute:'2-digit'});
+    }
 
     // Radio button styling
     document.querySelectorAll('.radio-label input[type="radio"]').forEach(radio => {
@@ -968,7 +948,7 @@
         summaryBox.addEventListener('copy', e => {
             e.preventDefault();
             if (e.clipboardData) e.clipboardData.setData('text/plain', '');
-            alert('Nội dung tài liệu tóm tắt được bảo vệ bản quyền: Không được phép sao chép!');
+            
             return false;
         });
         summaryBox.addEventListener('selectstart', e => e.preventDefault());
