@@ -1085,6 +1085,16 @@
         // Build Worksheet
         const ws = XLSX.utils.aoa_to_sheet(rows);
 
+        // Explicitly set Excel formula cell objects for live calculation
+        const sumRowNum = rows.length;
+        ws['B' + sumRowNum] = { t: 'n', f: 'COUNTA(C6:C' + lastRowIdx + ')' };
+        ws['J' + sumRowNum] = { t: 'n', f: 'COUNTIF(J6:J' + lastRowIdx + ', "*nhất trí*")' };
+        ws['L' + sumRowNum] = { t: 'n', f: 'COUNTIF(L6:L' + lastRowIdx + ', "*nhất trí*")' };
+        ws['N' + sumRowNum] = { t: 'n', f: 'COUNTIF(N6:N' + lastRowIdx + ', "*nhất trí*")' };
+        ws['P' + sumRowNum] = { t: 'n', f: 'COUNTIF(P6:P' + lastRowIdx + ', "*nhất trí*")' };
+        ws['R' + sumRowNum] = { t: 'n', f: 'COUNTIF(R6:R' + lastRowIdx + ', "*nhất trí*")' };
+        ws['T' + sumRowNum] = { t: 'n', f: 'COUNTIF(T6:T' + lastRowIdx + ', "*nhất trí*")' };
+
         // Set column widths
         ws['!cols'] = [
             { wch: 6 },  // STT
