@@ -250,6 +250,74 @@
                 overflow: hidden !important;
             }
         }
+
+        /* Tối ưu hóa Smartphone Portrait Mode cho Tài Liệu Tóm Tắt */
+        @media (max-width: 768px) {
+            html, body {
+                width: 100%;
+                overflow-x: hidden;
+            }
+            body {
+                padding: 6px 4px;
+                background-color: #f1f5f9;
+            }
+            .no-print-bar {
+                padding: 10px 12px;
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+                border-radius: 4px;
+            }
+            .page-container {
+                gap: 12px;
+            }
+            .a4-page {
+                min-height: auto;
+                padding: 18px 12px;
+                box-shadow: none;
+                border: 1px solid var(--border);
+                border-radius: 4px;
+            }
+            .page-header {
+                flex-direction: column;
+                gap: 6px;
+                padding-bottom: 8px;
+            }
+            .doc-main-title h1 {
+                font-size: 1.12rem;
+                line-height: 1.35;
+            }
+            .section-title {
+                font-size: 0.82rem;
+                padding: 6px 8px;
+            }
+            .subsection-title {
+                font-size: 0.8rem;
+            }
+            p, li {
+                font-size: 0.84rem;
+                line-height: 1.55;
+            }
+            .table-responsive {
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                margin-bottom: 10px;
+            }
+            .info-table {
+                font-size: 0.72rem;
+                min-width: 500px; /* Cho phép cuộn ngang mượt mà */
+            }
+            .info-table th, .info-table td {
+                padding: 5px 6px;
+            }
+            .page-footer {
+                flex-direction: column;
+                gap: 4px;
+                text-align: center;
+                font-size: 0.7rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -289,7 +357,7 @@
             <p><strong>Công ty TNHH Thương mại và Đầu tư Trường Thịnh Phát</strong> (địa chỉ: xóm Bờ Suối, xã Nam Hòa, tỉnh Thái Nguyên) là doanh nghiệp chế biến, xuất khẩu gỗ. Nhằm đáp ứng yêu cầu khắt khe về nguồn gốc gỗ hợp pháp và quản lý rừng bền vững theo tiêu chuẩn quốc tế FSC, Công ty đã thành lập mô hình liên kết chuỗi giá trị với các hộ gia đình chủ rừng trồng sản xuất từ năm 2022.</p>
             <p>Sau khi sáp nhập chính quyền 2 cấp năm 2025, quy mô Nhóm quản lý <strong>3.804,59 ha</strong> rừng trồng Keo sản xuất với <strong>2.198 lô rừng</strong> do <strong>1.674 chủ rừng</strong> (hộ gia đình) quản lý tại 04 xã thuộc tỉnh Thái Nguyên:</p>
 
-            <table class="info-table">
+            <div class="table-responsive"><table class="info-table">
                 <thead>
                     <tr>
                         <th>Địa bàn xã</th>
@@ -342,7 +410,7 @@
                         <td>7,56 ha</td>
                     </tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <div class="subsection-title">1.2. Mục tiêu kinh tế, luân kỳ và Mức khai thác cho phép hàng năm (AAC)</div>
             <ul>
@@ -387,7 +455,7 @@
             </ul>
 
             <div class="subsection-title">2.2. Kết quả Đánh giá Rừng có Giá trị Bảo tồn Cao (HCVF)</div>
-            <table class="info-table">
+            <div class="table-responsive"><table class="info-table">
                 <thead>
                     <tr>
                         <th>Giá trị bảo tồn (HCV)</th>
@@ -422,7 +490,7 @@
                         <td>Khu vực Rừng cúng xóm bản và Vùng giáp ranh di tích Mái Đá Ngườm, Hang Phiêng Tung.</td>
                     </tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <div class="subsection-title">2.3. Cam kết Rừng Liên kết Bảo vệ & Rừng Mẫu đại diện (Representative Sample Area)</div>
             <div class="highlight-box">
@@ -475,7 +543,7 @@
             </div>
 
             <div class="subsection-title">3.4. Thông tin liên hệ và Tiếp nhận ý kiến tham vấn</div>
-            <table class="info-table">
+            <div class="table-responsive"><table class="info-table">
                 <tbody>
                     <tr>
                         <td style="width: 30%; font-weight: 700; background: #f8fafc;">Đơn vị chủ trì:</td>
@@ -498,7 +566,7 @@
                         <td>Điền trực tiếp vào <strong>Phiếu tham vấn trực tuyến</strong> hoặc gửi thư/email theo địa chỉ trên.</td>
                     </tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <div class="page-footer">
                 <div>NHÓM CHỨNG CHỈ RỪNG FSC® VĂN HÁN - TRƯỜNG THỊNH PHÁT</div>
