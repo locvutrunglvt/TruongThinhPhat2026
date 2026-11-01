@@ -1,0 +1,10 @@
+{
+  "name": "truong-thinh-phat-2026",
+  "version": "1.0.0",
+  "description": "Hệ thống tham vấn ý kiến các bên liên quan FSC Văn Hán - Trường Thịnh Phát 2026",
+  "author": "Lộc Vũ Trung",
+  "license": "MIT",
+  "scripts": {
+    "start": "serve ."
+  }
+}

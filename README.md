@@ -25,38 +25,46 @@ TruongThinhPhat2026/
 ├── index.html              # Trang chủ: Phiếu tham vấn trực tuyến & Tóm tắt 3 trang
 ├── tai-lieu-tom-tat.html   # Bản in A4 độc lập: Toàn văn tài liệu tóm tắt 03 trang
 ├── report.html             # Dashboard báo cáo & thống kê (Mật khẩu: TTP2026)
-├── server.py               # Dịch vụ backend Python / SQLite cho VPS hoặc Localhost
-├── README.md               # Tài liệu hướng dẫn sử dụng và triển khai
+├── vercel.json             # Cấu hình tối ưu định tuyến và Clean URLs cho Vercel
+├── api/                    # Vercel Serverless Functions
+│   ├── submit.js           # Endpoint tiếp nhận nộp phiếu (/api/submit)
+│   └── data.js             # Endpoint API trạng thái hệ thống (/api/data)
+├── package.json            # Khai báo cấu hình dự án
+├── server.py               # Dịch vụ backend Python / SQLite dự phòng cho VPS/Local
+├── README.md               # Hướng dẫn sử dụng và triển khai
 └── data/                   # Thư mục lưu trữ database SQLite & File Excel xuất bản
 ```
 
 ---
 
 ## 🔐 3. Thông tin tài khoản & Mật khẩu
-* **Trang quản trị báo cáo:** `report.html`
+* **Trang quản trị báo cáo:** `report.html` (hoặc `/report` trên Vercel)
 * **Mật khẩu truy cập (Pass):** `TTP2026`
 
 ---
 
-## 🚀 4. Hướng dẫn triển khai
+## ⚡ 4. Hướng dẫn Triển khai lên VERCEL
 
-### A. Triển khai miễn phí trên GitHub Pages (Khuyên dùng)
-1. Đẩy mã nguồn lên repository: `https://github.com/locvutrunglvt/TruongThinhPhat2026`
-2. Vào tab **Settings** của repository trên GitHub.
-3. Chọn mục **Pages** (bên menu trái).
-4. Tại mục **Build and deployment** -> **Branch**: Chọn `main` và thư mục `/(root)` -> Nhấn **Save**.
-5. Sau 1–2 phút, website sẽ hoạt động trực tiếp tại địa chỉ:  
-   👉 **`https://locvutrunglvt.github.io/TruongThinhPhat2026/`**
+### Cách 1: Triển khai tự động từ GitHub (Khuyên dùng — 1 phút là xong)
+1. Truy cập [https://vercel.com/new](https://vercel.com/new) và đăng nhập bằng tài khoản GitHub của bạn.
+2. Tìm repository: **`locvutrunglvt/TruongThinhPhat2026`** và nhấn **Import**.
+3. Tại màn hình cấu hình dự án:
+   * **Project Name:** `truongthinhphat2026` (hoặc tên tùy chọn)
+   * **Framework Preset:** `Other`
+   * **Root Directory:** `./`
+4. Bấm **Deploy**.
+5. Vercel sẽ tự động build và cấp domain miễn phí tốc độ cao toàn cầu:
+   👉 **`https://truongthinhphat2026.vercel.app`** (hoặc subdomain tương ứng của bạn).
 
-### B. Chạy trên máy tính cá nhân hoặc máy chủ VPS
-Nếu muốn lưu trữ dữ liệu tập trung qua SQLite và API backend:
+### Cách 2: Triển khai trực tiếp từ máy tính bằng Vercel CLI
 ```bash
-python server.py
+cd "g:\My Drive\GIS\FSC\Thai Nguyen\Van Han 2026\Dong Loi\TruongThinhPhat2026"
+npx vercel
 ```
-Truy cập hệ thống tại: `http://localhost:8086/`
+* Làm theo hướng dẫn đăng nhập và chọn xác nhận deploy lên tài khoản Vercel cá nhân.
 
 ---
 
 ## 📊 5. Xuất báo cáo Excel
-* Tại trang `report.html` (sau khi mở khóa bằng mật khẩu `TTP2026`), bấm nút **"XUẤT BÁO CÁO EXCEL (.XLSX)"**.
+* Tại trang `report.html` hoặc `/report` (sau khi mở khóa bằng mật khẩu `TTP2026`), bấm nút **"XUẤT BÁO CÁO EXCEL (.XLSX)"**.
 * Hệ thống sẽ tự động xuất file `Bao_Cao_Tong_Hop_Tham_Van_Van_Han_TTP_2026.xlsx` chứa đầy đủ bảng dữ liệu, công thức tính tổng và thuộc tính tác giả: **Lộc Vũ Trung**.
