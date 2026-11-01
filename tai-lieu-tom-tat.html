@@ -214,8 +214,7 @@
             color: var(--slate-500);
         }
 
-        @media print {
-            body { background: white; padding: 0; }
+        
             .no-print-bar { display: none; }
             .page-container { gap: 0; }
             .a4-page {
@@ -226,9 +225,151 @@
                 min-height: 100vh;
             }
         }
+    
+        /* =========================================================================
+           DRM SECURITY & CONTENT PROTECTION: ANTI-SELECT, ANTI-COPY, ANTI-PRINT, ANTI-SCREENSHOT
+           ========================================================================= */
+        html, body, .page-container, .a4-page, * {
+            -webkit-user-select: none !important;
+            -moz-user-select: none !important;
+            -ms-user-select: none !important;
+            user-select: none !important;
+            -webkit-touch-callout: none !important;
+        }
+
+        /* Prevent Image Dragging & Pointer Theft */
+        img {
+            pointer-events: none !important;
+            -webkit-user-drag: none !important;
+        }
+
+        /* Security Watermark Overlay across entire screen */
+        .security-watermark-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 99998;
+            opacity: 0.13;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='420' height='260'><text x='30' y='120' fill='%23dc2626' font-size='14' font-family='sans-serif' font-weight='bold' transform='rotate(-22 150 120)'>BẢO MẬT FSC-C183027 • CẤM CHỤP ẢNH & SAO CHÉP</text><text x='50' y='145' fill='%230f172a' font-size='12' font-family='sans-serif' font-weight='bold' transform='rotate(-22 150 120)'>TRƯỜNG THỊNH PHÁT • CHỈ XEM TRỰC TUYẾN</text></svg>");
+            background-repeat: repeat;
+        }
+
+        /* Screen Blur when window loses focus (Anti-Snipping Tool / Screenshot tools) */
+        body.screen-blurred .page-container {
+            filter: blur(20px) grayscale(100%) !important;
+            opacity: 0.15 !important;
+            transition: filter 0.1s ease;
+        }
+
+        /* Focus Loss Warning Shield */
+        #screenShield {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(15, 23, 42, 0.92);
+            z-index: 99999;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #ffffff;
+            text-align: center;
+            padding: 24px;
+            cursor: pointer;
+        }
+        #screenShield.active {
+            display: flex;
+        }
+        #screenShield h2 {
+            font-size: 1.4rem;
+            color: #ef4444;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+        #screenShield p {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            max-width: 520px;
+            line-height: 1.6;
+        }
+
+        /* Security Toast Alert */
+        #secAlertToast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #dc2626;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+            z-index: 100001;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.25s ease;
+            pointer-events: none;
+        }
+        #secAlertToast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Total Print Blocking */
+        @media print {
+            html, body, .page-container, .no-print-bar, .security-watermark-overlay {
+                display: none !important;
+                visibility: hidden !important;
+                height: 0 !important;
+                overflow: hidden !important;
+            }
+            .print-block-screen {
+                display: block !important;
+                position: fixed;
+                top: 35%;
+                left: 10%;
+                right: 10%;
+                text-align: center;
+                font-size: 22pt;
+                color: #dc2626;
+                font-family: Arial, sans-serif;
+                font-weight: bold;
+                border: 3px solid #dc2626;
+                padding: 40px;
+            }
+        }
+
     </style>
 </head>
 <body>
+
+    <!-- SECURITY WATERMARK OVERLAY -->
+    <div class="security-watermark-overlay"></div>
+
+    <!-- SCREEN CAPTURE SHIELD (Active when window loses focus) -->
+    <div id="screenShield" onclick="dismissShield()">
+        <h2>🔒 TÀI LIỆU BẢO MẬT NỘI BỘ — FSC VĂN HÁN TTP</h2>
+        <p>Tài liệu này được bảo vệ bản quyền và chỉ cho phép <strong>xem trực tuyến</strong>.<br>Hành vi chụp màn hình, in ấn hoặc sao chép văn bản đã bị khóa theo quy chế bảo mật FSC.<br><br><span style="color:#22c55e; font-weight:700;">👉 Bấm vào bất kỳ đâu trên màn hình để tiếp tục xem</span></p>
+    </div>
+
+    <!-- SECURITY TOAST -->
+    <div id="secAlertToast">🛡️ <span id="secAlertMsg">Nội dung được bảo vệ: Không được phép sao chép / chụp ảnh!</span></div>
+
+    <!-- PRINT BLOCKED MESSAGE (ONLY VISIBLE ON PRINT ATTEMPT) -->
+    <div class="print-block-screen" style="display: none;">
+        TÀI LIỆU ĐƯỢC BẢO MẬT BẢN QUYỀN NỘI BỘ FSC-C183027.<br>
+        NGHIÊM CẤM MỌI HÀNH VI IN ẤN HOẶC XUẤT FILE DƯỚI MỌI HÌNH THỨC!
+    </div>
+
 
     <div class="no-print-bar">
         <div>
@@ -478,6 +619,128 @@
             </div>
         </div>
     </div>
+
+
+<script>
+    // =========================================================================
+    // DRM ANTI-LEAK, ANTI-COPY, ANTI-PRINT, ANTI-SCREENSHOT CONTROLLER
+    // =========================================================================
+
+    function showSecToast(msg) {
+        const toast = document.getElementById('secAlertToast');
+        const msgEl = document.getElementById('secAlertMsg');
+        if (toast && msgEl) {
+            msgEl.innerText = msg;
+            toast.classList.add('show');
+            clearTimeout(window._secToastTimer);
+            window._secToastTimer = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2400);
+        }
+    }
+
+    function dismissShield() {
+        document.body.classList.remove('screen-blurred');
+        const shield = document.getElementById('screenShield');
+        if (shield) shield.classList.remove('active');
+    }
+
+    // 1. CHỐNG BÔI ĐEN (PREVENT TEXT SELECTION)
+    document.addEventListener('selectstart', e => {
+        e.preventDefault();
+        return false;
+    });
+    document.addEventListener('selectionchange', () => {
+        const sel = window.getSelection();
+        if (sel && sel.toString().length > 0) {
+            sel.removeAllRanges();
+        }
+    });
+
+    // 2. CHỐNG SAO CHÉP & CHUỘT PHẢI (PREVENT COPY, CUT, CONTEXT MENU)
+    document.addEventListener('contextmenu', e => {
+        e.preventDefault();
+        showSecToast('Chuột phải bị khóa: Tài liệu chỉ cho phép xem trực tuyến!');
+        return false;
+    });
+
+    document.addEventListener('copy', e => {
+        e.preventDefault();
+        if (e.clipboardData) e.clipboardData.setData('text/plain', '');
+        showSecToast('Không được phép sao chép nội dung tài liệu bảo mật!');
+        return false;
+    });
+
+    document.addEventListener('cut', e => {
+        e.preventDefault();
+        return false;
+    });
+
+    document.addEventListener('dragstart', e => {
+        e.preventDefault();
+        return false;
+    });
+
+    // 3. CHỐNG PHÍM TẮT IN, LƯU, CHỤP ẢNH & DEVTOOLS
+    document.addEventListener('keydown', e => {
+        const isCtrl = e.ctrlKey || e.metaKey;
+        const k = e.key ? e.key.toLowerCase() : '';
+
+        // PrintScreen Key
+        if (e.key === 'PrintScreen' || e.keyCode === 44) {
+            if (navigator.clipboard) navigator.clipboard.writeText('');
+            showSecToast('Tính năng chụp màn hình bị hạn chế theo quy định bảo mật FSC!');
+            document.body.classList.add('screen-blurred');
+            document.getElementById('screenShield').classList.add('active');
+        }
+
+        // Ctrl+C, Ctrl+A, Ctrl+X, Ctrl+P, Ctrl+S, Ctrl+U
+        if (isCtrl && ['c', 'a', 'x', 'p', 's', 'u'].includes(k)) {
+            e.preventDefault();
+            if (k === 'p') {
+                showSecToast('In ấn tài liệu đã bị vô hiệu hóa hoàn toàn!');
+            } else if (k === 'c' || k === 'a') {
+                showSecToast('Không được phép bôi đen hoặc sao chép tài liệu!');
+            } else {
+                showSecToast('Thao tác phím tắt bị khóa để bảo vệ tài liệu!');
+            }
+            return false;
+        }
+
+        // F12 or Developer Tools shortcuts
+        if (e.key === 'F12' || (isCtrl && e.shiftKey && ['i', 'j', 'c'].includes(k))) {
+            e.preventDefault();
+            showSecToast('Chế độ xem mã nguồn bị khóa.');
+            return false;
+        }
+    });
+
+    // 4. CHỐNG IN ẤN (BLOCK PRINTING EVENT)
+    window.addEventListener('beforeprint', e => {
+        document.querySelectorAll('.a4-page, .no-print-bar').forEach(el => el.style.display = 'none');
+        alert('Tài liệu được bảo mật nội bộ FSC Trường Thịnh Phát — Không được phép in ấn hoặc xuất PDF!');
+    });
+    window.addEventListener('afterprint', e => {
+        document.querySelectorAll('.a4-page, .no-print-bar').forEach(el => el.style.display = '');
+    });
+
+    // 5. CHỐNG CHỤP MÀN HÌNH (BLUR ON FOCUS LOSS / SNIPPING TOOL)
+    window.addEventListener('blur', () => {
+        document.body.classList.add('screen-blurred');
+        document.getElementById('screenShield').classList.add('active');
+    });
+
+    window.addEventListener('focus', () => {
+        // Keep active until user clicks screen to dismiss intentionally
+    });
+
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            document.body.classList.add('screen-blurred');
+            document.getElementById('screenShield').classList.add('active');
+        }
+    });
+</script>
 
 </body>
 </html>

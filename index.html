@@ -483,6 +483,37 @@
             gap: 12px;
             justify-content: center;
         }
+    
+        /* DRM SECURITY: ANTI-SELECTION & ANTI-COPY ON SUMMARY CONTENT */
+        .summary-box, .summary-box * {
+            -webkit-user-select: none !important;
+            -moz-user-select: none !important;
+            -ms-user-select: none !important;
+            user-select: none !important;
+            -webkit-touch-callout: none !important;
+        }
+        .summary-box {
+            position: relative;
+            overflow: hidden;
+        }
+        .summary-watermark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 5;
+            opacity: 0.09;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='380' height='220'><text x='20' y='110' fill='%23dc2626' font-size='13' font-family='sans-serif' font-weight='bold' transform='rotate(-22 140 110)'>BẢO MẬT FSC-C183027 • CẤM SAO CHÉP</text><text x='30' y='135' fill='%230f172a' font-size='11' font-family='sans-serif' font-weight='bold' transform='rotate(-22 140 110)'>CHỈ XEM THAM VẤN TRỰC TUYẾN</text></svg>");
+            background-repeat: repeat;
+        }
+        @media print {
+            .summary-box {
+                display: none !important;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -515,6 +546,7 @@
     <div class="main-content">
         <!-- 3-PAGE SUMMARY BOX -->
         <div class="summary-box">
+            <div class="summary-watermark"></div>
             <div class="summary-header">
                 <div class="summary-title">
                     📖 BẢN TÓM TẮT THÔNG TIN THAM VẤN (03 TRANG TÀI LIỆU CỐT LÕI)
@@ -928,6 +960,20 @@
         document.getElementById('consultationForm').reset();
         displaySigner.value = '';
     }
+
+    // DRM Protection on Summary Document Content
+    const summaryBox = document.querySelector('.summary-box');
+    if (summaryBox) {
+        summaryBox.addEventListener('contextmenu', e => e.preventDefault());
+        summaryBox.addEventListener('copy', e => {
+            e.preventDefault();
+            if (e.clipboardData) e.clipboardData.setData('text/plain', '');
+            alert('Nội dung tài liệu tóm tắt được bảo vệ bản quyền: Không được phép sao chép!');
+            return false;
+        });
+        summaryBox.addEventListener('selectstart', e => e.preventDefault());
+    }
+
 </script>
 
 </body>
